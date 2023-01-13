@@ -1,0 +1,49 @@
+
+---
+/* 
+Array Items (cards)
+cards are individual item as a whole, which can be reused as long as same group of style is needed
+create default style and display value 
+*/
+export interface Props {
+   title: string;
+   body: string;
+   arrayColor?: boolean;       // adding other color options for card
+}
+
+/* 
+here we just create the default style for cards themselves
+that is saying we only defined the values inside the array here, only the boxs that hold items(text, img)
+however they will behave inside a div are depends on the style setting inside the file.astro that import them
+*/
+const { arrayColor = false } = Astro.props as Props;              // make the color option false by default
+---
+
+<!-- 
+---------------------------------------------------------------------------------------------------------------
+Conditioning Statement: ` ${arrayColor && 'arrayColor'}`
+if <Array /> is import, we must have color value together as well, and the class name for color is array-color
+we also need to put a <slot /> here because we need to add items inside the <Array />
+but the color can only have one option if written in this way, and can only be modified in this file
+---------------------------------------------------------------------------------------------------------------
+-->
+<div class={`array ${arrayColor && 'arrayColor'}`}>
+    <slot />
+</div>
+
+
+<!-- ------ style ------- -->
+<style>
+    .array {
+       background: var(--color-white);
+       padding: 2rem;
+       border-radius: 2rem;
+       box-shadow: 8px 8px 8px var(--color-black);
+       margin-bottom: 2rem;
+    }
+
+    .arrayColor {
+       background: var(--color-black);
+       color: var(--color-white);
+    }
+</style>

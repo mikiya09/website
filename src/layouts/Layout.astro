@@ -1,0 +1,52 @@
+
+---
+// import global css style, so that any file import layout may use all stuff in layout.astro including font
+import '../styles/global.css';
+// also we want every page to have the same header, you can modify it to not show later as well 
+import Header from '../components/Header.astro';
+// we want footer to display in every page
+import Footer from '../components/Footer.astro'; 
+// import showoff section 
+import Showoff from '../components/Showoff.astro';
+// side bar 
+import Sidebar from '../components/Sidebar.astro';
+
+// props is the built-in object that help setting up the title 
+export interface Props {
+    title?: string;
+}
+// create variable that set the default title across all pages to "testing website" for now
+// if you don't specify certain title in certain pages, it will display the default, otherwise display what you specify
+const { title = 'Xirong Cao Website' } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Xirong Cao Website</title>
+    </head>
+
+    <body>
+        <div class="grid-box">
+            <div class="top">
+                <Header />
+            </div>
+            <div class="lhs">
+                <Sidebar />
+            </div>
+            <div class="mid">
+               <slot />
+               <hr class="divider">
+            </div>
+            <div class="rhs">
+            </div>
+            <div class="bottom">
+                <Footer />
+            </div>
+        </div>
+    </body>
+</html>
+

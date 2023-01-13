@@ -1,0 +1,70 @@
+
+
+---
+/* 
+Self Introduction Section: 
+in this section we need to have body paragraph, so make it a variable. 
+not only easier for us to change the content, but as well as adding new title or paragraph to intro section 
+*/
+
+export interface Props {
+    name: string;
+    body: string;
+}
+
+// default value for name and introduction
+const { 
+    title = 'About', 
+    body = 'short introduction' } = Astro.props as Props;
+
+// profile pic
+import profileImg from '../images/smile.jpg'
+---
+
+
+
+<div class="profile-box">
+
+    <div class="introduction">
+        <h2>{title}</h2>
+        <p>This is me</p>
+        <p>. . .</p>
+        <p>. . .</p>
+        <a href="/">CV</a>
+    </div>
+    <div class="profile">
+        <img src={profileImg} alt="">
+    </div>
+
+</div>
+
+
+
+
+<style>
+
+.profile-box {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin: 5rem 3rem 4rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    box-shadow: 10px 10px 10px var(--color-black);
+}
+
+.introduction p {
+    font-size: 20px;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.profile img {
+    width: 9rem;
+    border-radius: 50%;
+}
+
+</style>

@@ -1,0 +1,41 @@
+
+---
+// import all components
+import Layout from '../layouts/Layout.astro';
+import Features from '../components/Features.astro';
+import Showoff from '../components/Showoff.astro';
+import Intro from '../components/Intro.astro';
+import Experience from '../components/Experience.astro';
+
+/* 
+
+<slot /> in the layout is the placeholder where you can put extra elements when you import layout in other file
+for the export variables created in certain file, you have set them when inside that file's tag 
+work       -> <Showoff showExtra={true} /> 
+won't work -> <Layout showExtra={true}> 
+because showExtra variable is created inside Showoff.astro file
+
+*/
+
+
+// not use these variables right now, keeping them possible usage in the future
+// <Experience headings={headingArray} contents={contentArray} />
+const headingArray = ['Research', 'Projects', 'Work'];
+const contentArray = ['what I have done', 
+                      'what I have known', 
+                      'what I need to do'];
+---
+
+
+<Layout>
+    <Showoff showExtra={true} />
+    <Intro />
+    <!-- expereince section need to be refined, both the looking and the content, and under the javascript code -->
+    <Experience activeHeaderColor="#62D196" />
+
+    <!-- maybe few display of blog section + something interesting like christain having his youtube tutorial, or only choose one -->
+
+</Layout>
+
+
+

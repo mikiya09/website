@@ -1,0 +1,118 @@
+
+---
+// because we have media setup already, so when window width decrease to certain px 
+// it will follow what that media specify, in our case only .logos-small {} class is displayed
+
+import Potion from './cssItems/Potion.astro';
+// same in the Layout template, we want some heading to be able to display dynamically
+// question mark means optional display 
+export interface Props {
+    heading?: string;
+    text?: string;
+    showExtra?: boolean;    // for blog pages only want heading and p, so label img as extra and only display in index page
+                            // false by default, set it to true to showcase or any otherb page you want to show those img
+                            // you set it up in the index.astro page
+}
+
+// here we are setting heading and text for default
+const { heading = "Xirong Cao", 
+        text = ". . .",
+        showExtra = false } = Astro.props as Props;
+---
+
+
+<div class="showoff">
+   <div class="showoff-text">
+       <h1>{heading}</h1>
+       <p>{text}</p> 
+   </div>
+
+   {showExtra && <> 
+       <div class="showoff-box">
+           <a class="btn" href="/">Explore</a> 
+           <a class="btn btn-leave" href="/">Leave</a> 
+       </div>
+       <div class="showoff-stuff">
+           <Potion />
+       </div>
+   </>}
+
+</div>
+
+
+<style>
+/* ----- showoff section ----- */
+.showoff {
+    height: auto;
+    background-image: linear-gradient(to bottom, var(--color-bg), rgb(15 23 41 / 0));
+    background-color: var(--color-bg);
+    /* padding: 5rem 5rem 7rem; */
+    padding: 5rem 5rem 20rem 5rem;
+    /* margin: 0 0 8rem; */
+}
+
+.showoff-text {
+    max-width: 40rem;
+    color: #fff;
+    text-align: center;
+    margin: 50px auto 2rem;
+    /* background: var(--color-green); */
+}
+
+.showoff h1 {
+    font-family: 'Ubuntu';
+    font-weight: 300;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.showoff p {
+    font-size: 1.1rem;
+    /* margin-bottom: 20px; */
+}
+
+/* for buttons */
+.showoff-box {
+    text-align: center;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.4rem;
+    margin: 0 0.3rem 0;
+    /* border-radius: 5px; */
+    background: none;
+    border: 1px solid;
+    color: var(--color-green);
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.7px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    color: var(--color-white);
+    background: none;
+}
+
+
+.btn-leave {
+    background: var(--color-green);
+    color: var(--color-black);
+}
+
+.btn-leave:hover {
+    background: var(--color-white); 
+    color: var(--color-black);
+}
+
+.showoff-stuff {
+    display: flex;
+    justify-content: center;
+    padding: 3.2rem 0 0;
+}
+
+
+</style>

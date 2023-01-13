@@ -1,0 +1,55 @@
+
+---
+// all social svg icons are imported
+import githubIcon from '../images/github4.svg'
+import youtubeIcon from '../images/youtube3.svg'
+import bilibiliIcon from '../images/bilibili.svg'
+import wechatIcon from '../images/wechat.svg'
+---
+
+
+<div class="side-Link">
+    <img class="side-icon" src={githubIcon} width=25 alt="" />
+    <img class="side-icon" src={youtubeIcon} width=25 alt="" />
+    <img class="side-icon" src={bilibiliIcon} width=25 alt="" />
+    <img class="side-icon" src={wechatIcon} width=25 alt="" />
+</div>
+
+
+<style>
+
+/* 
+===================================== position: sticky explanation ============================================
+
+1) because I want the whole header to move across the whole page 
+2) the range a div can move is based on the free space left in its parent div 
+3) so if set the .header inside .top div to sticky, it will only be able to move through the space .top div left
+4) and we don't want .top to take over too much space in the page, therefore not space left for ,header to move
+5) the solution is to set the .top div sticky, because it belongs to the main grid, and has a whole page to move
+
+================================================================================================================
+
+6) the reason we set .socials to sticky is because it could have the whole .lhs space to move vertically 
+7) if we do this to .lhs div, it will only have little distance to move 
+8) starting from the bottom of .lhs div to the bottom of footer
+
+================================================================================================================
+*/
+
+.side-Link {
+    position: sticky;
+    top: 6rem;
+    background: var(--color-bg);
+    /* border: solid; */
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin: 28rem 0 0;
+    /* justify-content: flex-end; */
+}
+
+.side-icon {
+    margin: 1rem 5rem 1rem;
+}
+
+</style>

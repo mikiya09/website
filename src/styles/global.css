@@ -1,0 +1,147 @@
+
+/* --------- global setting ---------- */
+
+/* google fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Maven+Pro&family=Montserrat+Alternates:ital,wght@0,100;0,400;1,100;1,400&family=Poiret+One&family=Ubuntu:wght@300;400&family=Zen+Maru+Gothic:wght@300;400&display=swap');
+
+/* my font */
+@font-face {
+  font-family: "slkscr";
+  src: url('../fonts/slkscr-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+    --color-bg:#1f2126;
+    --color-black: #121212;
+    --color-white: #D8DEE9;
+    --color-lightGreen: #A1EFD3;
+    --color-green: #62D196;
+    --color-blue: #7aa2f7;
+    --color-red: #ab1c0f;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Ubuntu';
+    padding: 6rem 12rem 6rem;
+    background: var(--color-bg);
+}
+
+
+hr.divider {
+    border: 0.5px;
+    border-top: 1px solid var(--color-lightGreen);
+    /* border-top: 1px solid var(--color-green); */
+}
+
+/* --------- grid display setting --------- */
+.top {
+    grid-area: top;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    position: sticky;
+    top: 0;
+}
+
+/* --- I am not quiet understand why lhs and header position sticky need to be done separately --- */
+.lhs {
+    grid-area: lhs;
+}
+
+.mid {
+    grid-area: mid;
+}
+
+.rhs {
+    grid-area: rhs;
+}
+
+.bottom {
+    grid-area: bottom;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+/*
+blur:
+---------------------------------------------------------
+offset-x | offset-y | color
+offset-x | offset-y | blur-radius | color
+offset-x | offset-y | blur-radius | spread-radius | color
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+*/
+
+
+.grid-box {
+    background: var(--color-bg);
+    border: solid;
+    border-radius: 2rem;
+    /* padding: 1rem; */
+    box-shadow: 15px 15px 15px var(--color-black);
+    display: grid;
+    grid-template-columns: 11% 78% 11%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "top top top"
+        "lhs mid rhs"
+        "bottom bottom bottom"
+}
+
+.rhs {
+}
+
+
+/* ----------- other setup -----------  */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    line-height: 2;
+}
+
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+
+/*
+padding/margin: 
+two value:   top + down | left + right 
+three value: top | left + right | down
+four value:  top | right | down | left
+*/
+
+
+
+@media (max-width: 960px) {
+
+}
+
+
+@media (max-width: 500px) {
+
+}
+
+
+

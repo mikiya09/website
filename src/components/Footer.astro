@@ -1,0 +1,122 @@
+
+
+
+<footer class="footer">
+    <div class="footerL">
+    </div>
+    <div class="footerC">
+        <div class="animation">
+            <h3>animation or something in 3D</h3>
+            <h3>also a clickable thing back to the top</h3>
+        </div>
+        <div class="resource">
+            <h3>Resource</h3>
+            <div><a href="/">Computer Science</a></div>
+            <div><a href="/">Psychology</a></div>
+            <div><a href="/">Mathematics</a></div>
+        </div>
+        <div class="interest">
+            <h3>Interests</h3>
+            <div><a href="/">Visual</a></div>
+            <div><a href="/">Auditory</a></div>
+            <div><a href="/">Idea</a></div>
+        </div>
+        <div class="contact">
+            <h3>Contact</h3>
+            <div><a href="/">+1</a></div>
+            <div><a href="/">New York, NY</a></div>
+            <div><a href="/">spacelion121319@gmail.com</a></div>
+        </div>
+    </div>
+    <div class="footerR">
+    </div>
+</footer>
+
+
+
+<style>
+/* --- nested grid display --- */
+
+
+.animation {
+    grid-area: animation;
+}
+
+.resource {
+    grid-area: resource;
+}
+
+.interest {
+    grid-area: interest;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.footerC {
+    grid-area: footerC;
+    display: grid;
+    grid-template-columns: 46% 18% 18% 18%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "animation resource interest contact"
+}
+
+.footerC h3 {
+    /* text-align: center; */
+    padding: 2rem 0 1.5rem;
+    color: var(--color-white);
+    font-family: "Montserrat Alternates";
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.resource div {
+    padding: 0.6rem 0;
+}
+
+.interest div {
+    padding: 0.6rem 0;
+}
+
+.contact div {
+    padding: 0.6rem 0;
+}
+
+
+.footerC a {
+    color: var(--color-white);
+    font-family: "Montserrat Alternates";
+    font-style: italic;
+    font-weight: 100;
+    font-size: 0.8rem;
+}
+
+.footerC a:hover {
+    color: var(--color-green);
+}
+
+
+.footerL {
+    grid-area: footerL;
+}
+
+
+.footerR {
+    grid-area: footerR;
+}
+
+
+.footer {
+    margin: 1.5rem 0;
+    /* border: solid; */
+    background: var(--color-bg);
+    display: grid;
+    grid-template-columns: 11% 78% 11%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "footerL footerC footerR"
+}
+
+</style>
