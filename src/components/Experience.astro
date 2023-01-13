@@ -13,62 +13,84 @@ I don't know if there is a way to passing an array of html object and so before 
 
 // ----------------------------- keep --------------------------------
 export interface Props {
-    activeHeaderColor? : string;
+    activeHeaderColor?: string;
+    inactiveHeaderColor?: string;
     headings: string[];
     contents: string[];
 }
 // ----------------------------- keep --------------------------------
 
-// only the activeHeaderColor variable is usable right now
-const { headings, contents, activeHeaderColor = "#ab1c0f"} = Astro.props as Props
+// only the activeHeaderColor and inactiveHeaderColor variable are usable right now
+const { headings, contents, activeHeaderColor = "#ab1c0f", inactiveHeaderColor = "#DBDEE9" } = Astro.props as Props
 ---
 
-<div class="tabs">
-    <h2>Get Start With Astro</h2>
-    <p>Get a new project up and running locally with our helpful create-astro CLI</p>
-    <ul class="tabs-header">
-        <li>Research</li>
-        <li>Projects</li>
-        <li>Work</li>
-    </ul>
-    <ul class="tabs-content">
-        <li class="tab">I-><a href="www.google.com">think</a></li>
-        <li class="tab">A</li>
-        <li class="tab">M</li>
-    </ul>
+<div class="experience-box">
+    <div class="experience-text">
+        <h2>Here</h2>
+        <p>things I had done or current working on</p>
+    </div>
+    <div class="tabs">
+        <div class="tabs-header">
+            <h3>Research</h3>
+            <h3>Projects</h3>
+            <h3>Work</h3>
+        </div>
+        <div class="tabs-cover">
+            <div class="tabs-content">
+                <p class="tab">I am working on&nbsp;<a href="/">it</a></p>
+                <p class="tab">neovim colorscheme&nbsp;<a href="https://github.com/mikiya09/kabutack.nvim">kabutack.nvim</a></p>
+                <p class="tab">Y</p>
+            </div>
+        </div>
+    </div>
 </div>
-
 
 <!-- ---- style ---- -->
 <style>
 
-.tabs {
+.experience-box {
     margin-top: 30px;
     padding: 3rem;
 }
 
+.tabs {
+}
+
 .tabs-header {
     display: flex;
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
+    color: var(--color-white);
+    padding: 10px 0 10px;
 }
 
 /* 
 in css setting cursor property to pointer means whichever tag have this class is clickable 
 */
-.tabs-header li {
+.tabs-header h3 {
     margin-right: 20px;
     cursor: pointer;
+    padding: 0.7rem;
+    border: solid 0.5px;
+    font-family: "Montserrat Alternates";
+    font-weight: 100;
+}
+
+.tabs-cover {
+    /* padding: 4px; */
+    box-shadow: 10px 10px 10px var(--color-black);
 }
 
 .tabs-content {
-    font-size: 18px;
-    padding: 20px;
-    border: 1px solid #333;
-    font-weight: bold;
-    background: #f4f4f4;
-    box-shadow: 10px 10px 10px var(--color-black);
+    border: 1px solid var(--color-black);
+    background: var(--color-white);
+}
+
+.tab {
+    margin: 1rem;
+}
+
+/* hyperlink color */
+.tabs-content a {
+    color: #0000EE;
 }
 
 </style>
@@ -77,7 +99,28 @@ in css setting cursor property to pointer means whichever tag have this class is
 
 <!-- -------------------------- script --------------------------- -->
 
-<script define:vars={{activeHeaderColor}}>
+<script define:vars={{activeHeaderColor, inactiveHeaderColor}}>
+/* 
+setTab(index): 
+1) if statement for setting all tabs to normal when current_tab_index = -1, which is initialize to -1 at the beginning
+2) then only the given index is set to bold/colored header tab
+
+
+default_tab_index:
+1) findIndex(x) is the function that return the index of class(tag) object that has the index meets the critial given by x parameter
+2) indexOf():   is the function that return whatever string is given in the parameter, here I don't really what 'default-tab' means, 
+                so just assume that is the first tab/class/tag in a array of tab 
+3) by default, given x.classList from tab_headers, we are selecting the first children in the <tab-headers />. So Research is selected 
+   and it's greater -1 assuming all programming language has index starts at 0, 1 maybe for some language but definitely not 0 if not specified
+   in the first start, first tab is set to be bold 
+4) click all sub tab/tags in tab_headers, whenever an click event is detected, passing this the clicked tag and its index to the setTab()
+
+
+createTab()
+1) ...document is like a search, searching all tags in the HTML, whenever a querySelector('.tabs') is found
+2) header = element.querySelector('.tabs-content') 
+   const tab_headers = [...header.children], select all tabs-header's children
+*/
 
   function createTabs(element) {
     const header = element.querySelector('.tabs-header');
@@ -86,10 +129,11 @@ in css setting cursor property to pointer means whichever tag have this class is
     const tab_contents = [...content.children];
     tab_contents.forEach((x) => (x.style.display = 'none'));
     let current_tab_index = -1;
+
     function setTab(index) {
       if (current_tab_index > -1) {
         tab_headers[current_tab_index].style.fontWeight = 400;
-        tab_headers[current_tab_index].style.color = '#fff';
+        tab_headers[current_tab_index].style.color = inactiveHeaderColor;
         tab_contents[current_tab_index].style.display = 'none';
       }
       tab_headers[index].style.fontWeight = 800;
@@ -97,11 +141,15 @@ in css setting cursor property to pointer means whichever tag have this class is
       tab_contents[index].style.display = 'flex';
       current_tab_index = index;
     }
+    
+    /* first start */
     let default_tab_index = tab_headers.findIndex((x) => {
       return [...x.classList].indexOf('default-tab') > -1;
     });
+
     default_tab_index = default_tab_index === -1 ? 0 : default_tab_index;
     setTab(default_tab_index);
+
     tab_headers.forEach((x, i) => (x.onclick = (event) => setTab(i)));
   }
   // Run
