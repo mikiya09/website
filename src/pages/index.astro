@@ -5,8 +5,8 @@ import Layout from '../layouts/Layout.astro';
 import Features from '../components/Features.astro';
 import Showoff from '../components/Showoff.astro';
 import Intro from '../components/Intro.astro';
-import Experience from '../components/Experience.astro';
-
+import Collections from '../components/Collections.astro';
+import Display from '../components/Display.astro';
 /* 
 
 <slot /> in the layout is the placeholder where you can put extra elements when you import layout in other file
@@ -31,9 +31,10 @@ const contentArray = ['what I have done',
     <Showoff showExtra={true} />
     <Intro />
     <!-- expereince section need to be refined, both the looking and the content, and under the javascript code -->
-    <Experience activeHeaderColor=var(--color-blue) inactiveHeaderColor=var(--color-white) />
+    <Collections activeHeaderColor=var(--color-blue) inactiveHeaderColor=var(--color-white) />
 
-    <!-- maybe few display of blog section + something interesting like christain having his youtube tutorial, or only choose one -->
+    <!-- something interesting(like christain youtube tutorial) or my research/project work. Either way, this section is for showing visual-->
+    <Display />
 
 </Layout>
 

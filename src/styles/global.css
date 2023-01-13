@@ -33,7 +33,7 @@
 
 body {
     font-family: 'Ubuntu';
-    padding: 6rem 12rem 6rem;
+    padding: 6rem 14rem 6rem;
     background: var(--color-bg);
 }
 
@@ -89,7 +89,7 @@ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     /* padding: 1rem; */
     box-shadow: 15px 15px 15px var(--color-black);
     display: grid;
-    grid-template-columns: 11% 78% 11%;
+    grid-template-columns: 15% 70% 15%;
     grid-template-rows: auto;
     grid-template-areas: 
         "top top top"

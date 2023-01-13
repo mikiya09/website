@@ -14,8 +14,8 @@ import logo from '../images/ladybug3.svg';
     <div class="headerC">
         <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="/">ABOUT</a></li>
-            <li><a href="/">BLOG</a></li>
+            <li><a href="/research">RESEARCH</a></li>
+            <li><a href="/blog">BLOG</a></li>
         </ul>
     </div>
     <div class="headerR">
@@ -47,14 +47,14 @@ import logo from '../images/ladybug3.svg';
 
 .headerC ul {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     margin: 0.3rem 0 0;
 }
 
 .headerC a {
     color: #fff;
     font-size: 1.2rem;
-    margin: 0 1.8rem 0;
+    margin: 0 0 0 2rem;
     font-family: "slkscr";
 }
 
@@ -63,9 +63,13 @@ import logo from '../images/ladybug3.svg';
 }
 
 .header {
-    margin: 1.5rem 0;
+    background: var(--color-bg);
+    padding: 1.5rem 0;
+    /* border-top: solid; */
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
     display: grid;
-    grid-template-columns: 11% 78% 11%;
+    grid-template-columns: 15% 70% 15%;
     grid-template-rows: auto;
     grid-template-areas: 
         "headerL headerC headerR"
