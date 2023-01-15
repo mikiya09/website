@@ -75,7 +75,17 @@ import logo from '../assets/images/ladybug3.svg';
         "headerL headerC headerR"
 }
 
-@media (max-width: 414px) {
+/* --- large monitor such as 24 inches --- */
+@media (max-width: 1700px) {
+    .header {
+        grid-template-columns: 12% 76% 12%;
+    }
+}
+
+
+
+/* --- iphone --- */
+@media (max-width: 640px) {
     .headerC a {
         font-size: 1rem;
     }

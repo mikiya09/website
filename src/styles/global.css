@@ -141,21 +141,28 @@ four value:  top | right | down | left
 */
 
 
-
-@media (max-width: 1480px) {
+/* --- monitor larger then 24 inches --- */
+@media (max-width: 1700px) {
     body {
-        padding: 4rem 10rem 4rem;
+        padding: 3rem 9rem 3rem;
+    }
+
+    .grid-box {
+        grid-template-columns: 12% 76% 12%;
     }
 
 }
 
+/* --- ipad pro --- */
 @media (max-width: 1024px) {
     body {
-        padding: 3rem 7rem 3rem;
+        padding: 2.5rem 7rem 2.5rem;
     }
 }
 
-@media (max-width: 414px) {
+/* --- iphone --- */
+/* --- iphone 13 pro max seems to have 622 width --- */
+@media (max-width: 640px) {
     body {
         padding: 2rem 1rem 2rem;
     }

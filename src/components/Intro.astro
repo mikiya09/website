@@ -109,7 +109,7 @@ import cv from '../assets/file/moanin.pdf';
     padding: 0.8rem 2.5rem 0.8rem;
 }
 
-/* --- laptop --- */
+/* --- laptop with larger monitor (like 27 inches) --- */
 @media (max-width: 1700px) {
 
     .introduction h2 {
@@ -117,20 +117,65 @@ import cv from '../assets/file/moanin.pdf';
     }
 
     .introduction p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .intro-btn a {
-        border: solid 1px;
         padding: 0.5rem 2rem 0.5rem;
     }
 
-    .profile img {
-        width: 6rem;
+    .profile {
+        padding: 4rem 3rem 4rem;
     }
 
-/* --- ipad 12.9' --- */
-@media (max-width: 1480px) {
+    .profile img {
+        width: 7rem;
+        margin: 0.3rem;
+    }
+
+@media (max-width: 1300px) {
+
+    .profile-box {
+        padding: 0.7rem;
+        /* border: solid; */
+        box-shadow: 13px 13px 13px var(--color-black);
+        border-radius: 2rem;
+    }
+
+
+    .introduction h2 {
+        font-size: 1.4rem;
+    }
+
+    .introduction p {
+        font-size: 0.9rem;
+    }
+
+    .intro-btn a {
+        padding: 0.2rem 1.5rem 0.2rem;
+    }
+
+    .profile {
+        padding: 3.5rem 2.5rem 3.5rem;
+    }
+
+    .profile img {
+        width: 6.5rem;
+        /* margin: 0.2rem; */
+    }
+
+    .intro-btn {
+        display: flex;
+        justify-content: left;
+        margin: 0.5rem 0 0;
+}
+
+}
+
+
+
+/* --- ipad pro --- */
+@media (max-width: 1024px) {
 
     .profile-box {
     }
@@ -167,7 +212,7 @@ import cv from '../assets/file/moanin.pdf';
 
 
 /* --- iphone --- */
-@media (max-width: 414px) {
+@media (max-width: 640px) {
 
     .introduction h2 {
         font-size: 1.5rem;

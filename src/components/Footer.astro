@@ -117,8 +117,14 @@
         "footerL footerC footerR"
 }
 
+/* --- large monitor such as 24 inches --- */
+.footer {
+    grid-template-columns: 12% 76% 12%;
+}
 
-/* --- ipad air --- */
+
+
+/* --- ipad pro --- */
 @media (max-width: 1024px) {
 
     .footerC {
@@ -140,7 +146,7 @@
     }
 
 /* --- iphone --- */
-@media (max-width: 414px) {
+@media (max-width: 640px) {
 
     .footerC {
         grid-area: footerC;
@@ -173,6 +179,5 @@
         border-bottom: solid var(--color-grey);
     }
 }
-
 
 </style>
