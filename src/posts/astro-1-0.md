@@ -1,30 +1,72 @@
 ---
-title: Astro 1.0 
+title: After Twenty Years
 slug: astro-1-0
-excerpt: a;sdlkj asd;flkajs asdfjasd;lfk sdfjasl alsdkfja sdlfak asdflkajsd.  
-date: 2022-05-23 
-author: Bruce Me
+excerpt: copied from O. Henry's short stories collection, one of my favorite one
+date: 1906-01-02 
+author: O. Henry
 ---
+THE POLICEMAN ON the beat moved up the avenue impressively. The impressiveness was habitual and not for show, for spectators were few. The time was barely 10 o'clock at night, but chilly gusts of wind with a taste of rain in them had well nigh depeopled the streets.
 
-For those who are interested in finding random paragraphs, that's exactly what this webpage provides. If both a random word and a random sentence aren't quite long enough for your needs, then a random paragraph might be the perfect solution. Once you arrive at this page, you'll see a random paragraph. If you need another one, all you need to do is click on the "next paragraph" button. If you happen to need several random paragraphs all at once, you can use this other paragraph generator. Below you can find a number of ways that this generator can be used.
+Trying doors as he went, twirling his club with many intricate and artful movements, turning now and then to cast his watchful eye adown the pacific thoroughfare, the officer, with his stalwart form and slight swagger, made a fine picture of a guardian of the peace. The vicinity was one that kept early hours. Now and then you might see the lights of a cigar store or of an all-night lunch counter; but the majority of the doors belonged to business places that had long since been closed.
 
-Text Blocks
-There are a number of reasons you may need a block of text and when you do, a random paragraph can be the perfect solution. If you happen to be a web designer and you need some random text to show in your layout, a random paragraph can be an excellent way to do this. If you're a programmer and you need random text to test the program, using these paragraphs can be the perfect way to do this. Anyone who's in search of realistic text for a project can use one or more of these random paragraphs to fill their need.
+When about midway of a certain block the policeman suddenly slowed his walk. In the doorway of a darkened hardware store a man leaned, with an unlighted cigar in his mouth. As the policeman walked up to him the man spoke up quickly.
 
-Improve Writing
-For writers looking for a way to get their creative writing juices flowing, using a random paragraph can be a great way to do this. One of the great benefits of this tool is that nobody knows what is going to appear in the paragraph. This can be leveraged in a few different ways to force the writer to use creativity. For example, the random paragraph can be used as the beginning paragraph of a story that the writer must finish. I can also be used as a paragraph somewhere inside a short story, or for a more difficult creative challenge, it can be used as the ending paragraph. In every case, the writer is forced to use creativity to incorporate the random paragraph into the story.
+“It's all right, officer,” he said, reassuringly. “I'm just waiting for a friend. It's an appointment made twenty years ago. Sounds a little funny to you, doesn't it? Well, I'll explain if you'd like to make certain it's all straight. About that long ago there used to be a restaurant where this store stands— ‘Big Joe’ Brady's restaurant.”
 
-Rewriting Skills
-For some writers, it isn't getting the original words on paper that's the challenge, but rewriting the first and second drafts. Using the random paragraph generator can be a good way to get into a rewriting routine before beginning the project. In this case, you take the random paragraph and rewrite it so it retains the same meaning, but does so in a better and more concise way. Beginning the day doing this with a random paragraph can make the rewriting of an article, short story, or chapter of a book much easier than trying to begin directly with it.
+“Until five years ago,” said the policeman. “It was torn down then.”
 
-Overcome Writers' Block
-When it comes to writers' block, often the most difficult part is simply beginning to put words to paper. One way that can often help is to write about something completely different from what you're having the writers' block about. This is where a random paragraph can be quite helpful. By using this tool you can begin to chip away at the writers' block by simply adding to the random paragraph that appears with the knowledge that it's going to be completely different from any writing you've been doing. Then once you begin to put words on the paper, it should be easier to transition into the writing that needs to get done.
+The man in the doorway struck a match and lit his cigar. The light showed a pale, square-jawed face with keen eyes, and a little white scar near his right eyebrow. His scarf pin was a large diamond, oddly set.
 
-Difficult Writing Challenge
-For those who are looking for a difficult writing challenge, the random paragraph generator can provide that as well. Instead of writing about the entire paragraph, take each sentence in the paragraph and make each of those individual sentences the first or last sentence of each paragraph of a short story. Trying this difficult writing challenge should stretch your creativity to the limit.
+“Twenty years ago tonight,” said the man, “I dined here at ‘Big Joe’ Brady's with Jimmy Wells, my best chum, and the finest chap in the world. He and I were raised here in New York, just like two brothers, together. I was eighteen and Jimmy was twenty. The next morning I was to start for the West to make my fortune. You couldn't have dragged Jimmy out of New York; he thought it was the only place on earth. Well, we agreed that night that we would meet here again exactly twenty years from that date and time, no matter what our conditions might be or from what distance we might have to come. We figured that in twenty years each of us ought to have our destiny worked out and our fortunes made, whatever they were going to be.”
 
-The best way to use these random paragraphs is to generate a few and see how they can help with whatever project you're currently pursuing. You should be able to figure out quickly if this tool will be beneficial for your project or needs. Often times the best way to see if it's what you've been looking for is to use it and find out for yourself.
+“It sounds pretty interesting,” said the policeman. “Rather a long time between meets, though, it seems to me. Haven't you heard from your friend since you left?”
 
-We're always seeking constructive ideas on how we can improve our random paragraph generator. If you have used this tool and have an idea on how we could improve it for the benefit of everyone, we'd love to hear from you. Take a moment to email us with your ideas so we can consider them for future updates.
+“Well, yes, for a time we corresponded,” said the other. “But after a year or two we lost track of each other. You see, the West is a pretty big proposition, and I kept hustling around over it pretty lively. But I know Jimmy will meet me here if he's alive, for he always was the truest, staunchest old chap in the world. He'll never forget. I came a thousand miles to stand in this door tonight, and it's worth it if my old partner turns up.”
 
+The waiting man pulled out a handsome watch, the lids of it set with small diamonds.
 
+“Three minutes to ten,” he announced. “It was exactly ten o'clock when we parted here at the restaurant door.”
+
+“Did pretty well out West, didn't you?” asked the policeman.
+
+“You bet! I hope Jimmy has done half as well. He was a kind of plodder, though, good fellow as he was. I've had to compete with some of the sharpest wits going to get my pile. A man gets in a groove in New York. It takes the West to put a razor-edge on him.”
+
+The policeman twirled his club and took a step or two.
+
+“I'll be on my way. Hope your friend comes around all right. Going to call time on him sharp?”
+
+“I should say not!” said the other. “I'll give him half an hour at least. If Jimmy is alive on earth he'll be here by that time. So long, officer.”
+
+“Good-night, sir,” said the policeman, passing on along his beat, trying doors as he went.
+
+There was now a fine, cold drizzle falling, and the wind had risen from its uncertain puffs into a steady blow. The few foot passengers astir in that quarter hurried dismally and silently along with coat collars turned high and pocketed hands. And in the door of the hardware store the man who had come a thousand miles to fill an appointment, uncertain almost to absurdity, with the friend of his youth, smoked his cigar and waited.
+
+About twenty minutes he waited, and then a tall man in a long overcoat, with collar turned up to his ears, hurried across from the opposite side of the street. He went directly to the waiting man.
+
+“Is that you, Bob?” he asked, doubtfully.
+
+“Is that you, Jimmy Wells?” cried the man in the door.
+
+“Bless my heart!” exclaimed the new arrival, grasping both the other's hands with his own. “It's Bob, sure as fate. I was certain I'd find you here if you were still in existence. Well, well, well!—twenty years is a long time. The old restaurant's gone, Bob; I wish it had lasted, so we could have had another dinner there. How has the West treated you, old man?”
+
+“Bully; it has given me everything I asked it for. You've changed lots, Jimmy. I never thought you were so tall by two or three inches.”
+
+“Oh, I grew a bit after I was twenty.”
+
+“Doing well in New York, Jimmy?”
+
+“Moderately. I have a position in one of the city departments. Come on, Bob; we'll go around to a place I know of, and have a good long talk about old times.”
+
+The two men started up the street, arm in arm. The man from the West, his egotism enlarged by success, was beginning to outline the history of his career. The other, submerged in his overcoat, listened with interest.
+
+At the corner stood a drug store, brilliant with electric lights. When they came into this glare each of them turned simultaneously to gaze upon the other's face.
+
+The man from the West stopped suddenly and released his arm.
+
+“You're not Jimmy Wells,” he snapped. “Twenty years is a long time, but not long enough to change a man's nose from a Roman to a pug.”
+
+“It sometimes changes a good man into a bad one,” said the tall man. “You've been under arrest for ten minutes, ‘Silky’ Bob. Chicago thinks you may have dropped over our way and wires us she wants to have a chat with you. Going quietly, are you? That's sensible. Now, before we go on to the station here's a note I was asked to hand you. You may read it here at the window. It's from Patrolman Wells.”
+
+The man from the West unfolded the little piece of paper handed him. His hand was steady when he began to read, but it trembled a little by the time he had finished. The note was rather short.
+
+Bob: I was at the appointed place on time. When you struck the match to light your cigar I saw it was the face of the man wanted in Chicago. Somehow I couldn't do it myself, so I went around and got a plainclothesman to do the job.

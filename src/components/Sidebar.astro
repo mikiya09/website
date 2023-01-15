@@ -1,10 +1,10 @@
 
 ---
 // all social svg icons are imported
-import githubIcon from '../images/github4.svg'
-import youtubeIcon from '../images/youtube3.svg'
-import bilibiliIcon from '../images/bilibili.svg'
-import wechatIcon from '../images/wechat.svg'
+import githubIcon from '../assets/images/github4.svg'
+import youtubeIcon from '../assets/images/youtube3.svg'
+import bilibiliIcon from '../assets/images/bilibili.svg'
+import wechatIcon from '../assets/images/wechat.svg'
 ---
 
 
@@ -51,5 +51,23 @@ import wechatIcon from '../images/wechat.svg'
 .side-icon {
     margin: 1rem 5rem 1rem;
 }
+
+
+@media (max-width: 1024px) {
+    .side-icon {
+        margin: 1rem 2.5rem 1rem;
+        width: 25px;
+    }
+}
+
+/* --- iphone --- */
+@media (max-width: 414px) {
+    .side-icon {
+    margin: 1rem 1.2rem 1rem;
+        width: 17px;
+    }
+}
+
+
 
 </style>

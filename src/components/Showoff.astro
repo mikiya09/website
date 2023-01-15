@@ -9,6 +9,7 @@ import Potion from './cssItems/Potion.astro';
 export interface Props {
     heading?: string;
     text?: string;
+    textOption?: boolean;   // override default option for specified needs
     showExtra?: boolean;    // for blog pages only want heading and p, so label img as extra and only display in index page
                             // false by default, set it to true to showcase or any otherb page you want to show those img
                             // you set it up in the index.astro page
@@ -17,11 +18,12 @@ export interface Props {
 // here we are setting heading and text for default
 const { heading = "Xirong Cao", 
         text = ". . .",
+        textOption = false,
         showExtra = false } = Astro.props as Props;
 ---
 
 
-<div class="showoff">
+<div class={`showoff ${textOption && 'textOption'}`}>
    <div class="showoff-text">
        <h1>{heading}</h1>
        <p>{text}</p> 
@@ -53,28 +55,36 @@ const { heading = "Xirong Cao",
 
 .showoff-text {
     max-width: 40rem;
-    color: #fff;
+    color: var(--color-white);
     text-align: center;
-    margin: 50px auto 2rem;
+    margin: 3rem auto 2rem;
     /* background: var(--color-green); */
 }
 
+.textOption h1 {
+    color: var(--color-blue);
+}
+
+.textOption p {
+    color: var(--color-blue);
+}
+
 .showoff h1 {
-    font-family: 'Ubuntu';
-    font-weight: 300;
+    font-weight: 100;
     font-size: 2.5rem;
-    color: #fff;
     margin-bottom: 20px;
 }
 
 .showoff p {
     font-size: 1.1rem;
+    font-weight: 100;
     /* margin-bottom: 20px; */
 }
 
 /* for buttons */
 .showoff-box {
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -90,6 +100,8 @@ const { heading = "Xirong Cao",
     font-size: 1rem;
     letter-spacing: 0.7px;
     transition: all 0.3s ease;
+    font-family: 'Ubuntu';
+    font-weight: 300;
 }
 
 .btn:hover {
@@ -111,8 +123,40 @@ const { heading = "Xirong Cao",
 .showoff-stuff {
     display: flex;
     justify-content: center;
-    padding: 3.2rem 0 20rem;
+    padding: 3.2rem 0 15rem;
 }
 
+
+@media (max-width: 414px) {
+
+    .showoff h1 {
+        font-weight: 100;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .showoff a {
+        font-size: 0.8rem;
+    }
+
+    .showoff-box {
+        flex-direction: column;
+    }
+
+    .showoff-text {
+        margin: 1rem auto 2rem;
+    }
+
+    .btn {
+        text-align: center;
+        margin: 0.5rem 0 0;
+    }
+
+    .showoff-stuff {
+        padding: 3.2rem 0 9rem;
+    }
+
+    
+}
 
 </style>

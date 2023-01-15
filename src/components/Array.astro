@@ -2,13 +2,17 @@
 ---
 /* 
 Array Items (cards)
-cards are individual item as a whole, which can be reused as long as same group of style is needed
-create default style and display value 
+1) cards are individual item as a whole, which can be reused as long as same group of style is needed
+   create default style and display value 
+2) by passing different boolean values to the <Array /> based on the file that import <Array /> 
+   we can override the basic array style according to different needs
+
 */
 export interface Props {
    title: string;
    body: string;
-   arrayColor?: boolean;       // adding other color options for card
+   blogArrayStyle?: boolean;
+   postArrayStyle?: boolean;
 }
 
 /* 
@@ -16,7 +20,8 @@ here we just create the default style for cards themselves
 that is saying we only defined the values inside the array here, only the boxs that hold items(text, img)
 however they will behave inside a div are depends on the style setting inside the file.astro that import them
 */
-const { arrayColor = false } = Astro.props as Props;              // make the color option false by default
+const { blogArrayStyle = false, 
+        postArrayStyle = false } = Astro.props as Props;
 ---
 
 <!-- 
@@ -27,23 +32,40 @@ we also need to put a <slot /> here because we need to add items inside the <Arr
 but the color can only have one option if written in this way, and can only be modified in this file
 ---------------------------------------------------------------------------------------------------------------
 -->
-<div class={`array ${arrayColor && 'arrayColor'}`}>
+<div class={`basicArrayStyle 
+             ${blogArrayStyle && 'blogArrayStyle'} 
+             ${postArrayStyle && 'postArrayStyle'}`}>
     <slot />
 </div>
 
 
 <!-- ------ style ------- -->
 <style>
-    .array {
-       background: var(--color-white);
-       padding: 2rem;
-       border-radius: 2rem;
-       box-shadow: 8px 8px 8px var(--color-black);
-       margin-bottom: 2rem;
-    }
 
-    .arrayColor {
-       background: var(--color-black);
-       color: var(--color-white);
+.basicArrayStyle {
+   background: var(--color-white);
+   color: var(--color-black);
+}
+
+.blogArrayStyle {
+   background: var(--color-bg);
+   color: var(--color-white);
+   border-top: 2px solid var(--color-black);
+   /* border-radius: 2rem; */
+   padding: 4rem 0 4rem;
+}
+
+.postArrayStyle {
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+
+@media (max-width: 1024px) {
+    .blogArrayStyle {
+        padding: 3rem 0 3rem;
     }
+}
+
+
 </style>

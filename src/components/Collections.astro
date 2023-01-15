@@ -26,8 +26,7 @@ const { headings, contents, activeHeaderColor = "#ab1c0f", inactiveHeaderColor =
 
 <div class="experience-box">
     <div class="experience-text">
-        <h2>Here</h2>
-        <p>things I had done or current working on</p>
+        <h2>- Collections -</h2>
     </div>
     <div class="tabs">
         <div class="tabs-header">
@@ -37,9 +36,9 @@ const { headings, contents, activeHeaderColor = "#ab1c0f", inactiveHeaderColor =
         </div>
         <div class="tabs-cover">
             <div class="tabs-content">
-                <p class="tab">I am working on&nbsp;<a href="/">it</a></p>
-                <p class="tab">neovim colorscheme&nbsp;<a href="https://github.com/mikiya09/kabutack.nvim">kabutack.nvim</a></p>
-                <p class="tab">No posts yet</p>
+                <p class="tab">I am working on&nbsp;<a href="/">them</a></p>
+                <p class="tab">a neovim colorscheme:<a href="/">&nbsp; kabutack.nvim</a></p>
+                <p class="tab">Updating...</p>
             </div>
         </div>
     </div>
@@ -52,7 +51,10 @@ const { headings, contents, activeHeaderColor = "#ab1c0f", inactiveHeaderColor =
     margin: 10rem 0 5rem;
 }
 
-.tabs {
+.experience-text h2 {
+    color: var(--color-white);
+    font-weight: 100;
+    font-size: 1.4rem;
 }
 
 .tabs-header {
@@ -64,23 +66,27 @@ const { headings, contents, activeHeaderColor = "#ab1c0f", inactiveHeaderColor =
 /* 
 in css setting cursor property to pointer means whichever tag have this class is clickable 
 */
+
 .tabs-header h3 {
     margin-right: 20px;
     cursor: pointer;
     padding: 0.7rem;
-    border: solid 0.5px;
-    font-family: "Montserrat Alternates";
+    border: solid 1px;
     font-weight: 100;
+    /* background: var(--color-white); */
+    /* color: var(--color-black); */
 }
 
 .tabs-cover {
     /* padding: 4px; */
-    box-shadow: 10px 10px 10px var(--color-black);
+    border: solid var(--color-bg);
+    box-shadow: 13px 13px 13px var(--color-black);
 }
 
 .tabs-content {
     border: 1px solid var(--color-black);
     background: var(--color-white);
+    color: var(--color-black);
 }
 
 .tab {
@@ -89,8 +95,29 @@ in css setting cursor property to pointer means whichever tag have this class is
 
 /* hyperlink color */
 .tabs-content a {
-    color: #0000EE;
+    color: var(--color-hyperlink);
 }
+
+
+/* --- ipad air --- */
+@media (max-width: 1024px) {
+    .tabs-header h3 {
+        font-size: 1rem;
+    }
+}
+
+
+/* --- iphone --- */
+@media (max-width: 414px) {
+    .tabs-header h3 {
+        font-size: 0.8rem;
+    }
+
+    .tabs-content p {
+        font-size: 1rem;
+    }
+}
+
 
 </style>
 

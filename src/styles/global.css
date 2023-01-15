@@ -1,13 +1,25 @@
 
 /* --------- global setting ---------- */
 
-/* google fonts */ 
+/*
+ google fonts: 
+ 1) Indie Flower 
+ 2) Maven Pro 
+ 3) Montserrat Alternates
+ 4) Ubuntu 
+ 5) Zen Maru Gothic 
+ 6) Poiret One
+ */ 
+
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Maven+Pro&family=Montserrat+Alternates:ital,wght@0,100;0,400;1,100;1,400&family=Poiret+One&family=Ubuntu:wght@300;400&family=Zen+Maru+Gothic:wght@300;400&display=swap');
+
+
+
 
 /* my font */
 @font-face {
   font-family: "slkscr";
-  src: url('../fonts/slkscr-webfont.woff') format('woff');
+  src: url('../assets/fonts/slkscr-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,11 +27,13 @@
 
 :root {
     --color-bg:#1f2126;
+    --color-grey: #71717a;
     --color-black: #121212;
     --color-white: #D8DEE9;
     --color-lightGreen: #A1EFD3;
     --color-green: #62D196;
     --color-blue: #7aa2f7;
+    --color-hyperlink: #0000EE;
     --color-red: #ab1c0f;
 }
 
@@ -32,16 +46,16 @@
 
 
 body {
-    font-family: 'Ubuntu';
-    padding: 6rem 14rem 6rem;
+    font-family: 'Montserrat Alternates';
+    padding: 4rem 14rem 4rem;
     background: var(--color-bg);
 }
 
 
 hr.divider {
     border: 0.5px;
-    border-top: 1px solid var(--color-lightGreen);
-    /* border-top: 1px solid var(--color-green); */
+    border-top: 1px solid var(--color-lightGreen);          /* this one is the color setting of hr */
+    margin: 6rem 0 0;
 }
 
 /* --------- grid display setting --------- */
@@ -81,7 +95,6 @@ offset-x | offset-y | blur-radius | spread-radius | color
 box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 */
 
-
 .grid-box {
     background: var(--color-bg);
     border: solid;
@@ -104,13 +117,8 @@ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 /* ----------- other setup -----------  */
 a {
     text-decoration: none;
-    color: #333;
 }
 
-p {
-    margin: 0.5rem 0;
-    font-size: 1.1rem;
-}
 
 ul {
     list-style: none;
@@ -120,7 +128,6 @@ li {
     line-height: 2;
 }
 
-h2,
 h3 {
     line-height: 1.2;
 }
@@ -135,14 +142,23 @@ four value:  top | right | down | left
 
 
 
-@media (max-width: 960px) {
+@media (max-width: 1480px) {
+    body {
+        padding: 4rem 10rem 4rem;
+    }
 
 }
 
-
-@media (max-width: 500px) {
-
+@media (max-width: 1024px) {
+    body {
+        padding: 3rem 7rem 3rem;
+    }
 }
 
+@media (max-width: 414px) {
+    body {
+        padding: 2rem 1rem 2rem;
+    }
+}
 
 

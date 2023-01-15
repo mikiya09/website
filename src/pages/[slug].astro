@@ -1,35 +1,110 @@
 
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+/* 
+get static path:
+1) get markdown from certain path into this template file, so they could be display in the same way
+   slug is the field used for locating the files
+2) when makrdown file is located, get them from the path 
+3) when markdown file is obtained, expert the value inside out into this file 
+4) export async function is for that operation, but what's really happening I have no idea 
+   as for the reason why export async function need to return an array of params and props, 
+   it because there might have multiple markdown files, 
+   so we can fetch their slugs(link) in an array and their content in another array 
+   and then we can get the frontmatter and content object from props, which is an array of markdown file contents 
+   and then display them similar to looping through the array the file name already indicate that, 
+5) [slug].astro which is an array of slug value, 
+   the value in slug field inside frontmatter has to be the same as the file.md name
+   which seems like a strict name: astro-1-x. x can be substituded with any number
+*/
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../posts/*.md');
+    const posts = await Astro.glob('../posts/*.md');
 
-  return posts.map(post => ({
-    params: {
-      slug: post.frontmatter.slug
-    },
-    props: {
-      post
-    }
-  }));
+    return posts.map(post => ({
+        params: {
+            slug: post.frontmatter.slug
+        }, 
+        props: {
+            post
+        }
+    }));
 }
-const { Content, frontmatter } = Astro.props.post;
+
+const { Content, frontmatter } = Astro.props.post; 
+
+// import 
+import Layout from '../layouts/Layout.astro';
+import Array from '../components/Array.astro';
 ---
 
 
 <Layout title={frontmatter.title}>
-    <section class="page-content">
-        <div class="container">
-            <Card>
-                <a class="btn" href="/blog">Go Back</a>
+    <div class="page">
+        <Array postArrayStyle={true}>
+            <div class="post-btn">
+                <a href="/blog">Go Back</a>
+            </div>
+            <div>
                 <h2>{frontmatter.title}</h2>
-                <div>
-                    Written by <strong>{frontmatter.author}</strong> on {new Date(frontmatter.date).toLocaleDateString()}
+                <div class="writer">
+                    <p>by <strong>{frontmatter.author}</strong> on 
+                    {new Date(frontmatter.date).toLocaleDateString()}</p>
                 </div>
+            </div>
+            <div class="page-content">
                 <Content />
-            </Card>
-        </div>
-    </section>
+            </div>
+        </Array>
+    </div>
 </Layout>
+
+/* ---- style ---- */
+<style>
+
+.post-btn {
+    padding: 1rem 0 2rem;
+}
+
+.post-btn a {
+    background: var(--color-bg);
+    color: var(--color-white);
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.writer {
+    display: flex;
+    justify-content: left;
+}
+
+.page p {
+    padding: 0.2rem;
+    margin: 0 0 0.7rem;
+}
+
+.page strong {
+    color: var(--color-hyperlink);
+}
+
+/* --- iphone --- */
+@media (max-width: 414px) {
+
+    .page-content {
+        font-size: 0.7rem;
+    }
+
+    .page h2 {
+        font-size: 1.3rem;
+    }
+
+    .page p {
+        font-size: 0.9rem;
+    }
+
+}
+
+
+
+
+</style>

@@ -67,7 +67,6 @@
     /* text-align: center; */
     padding: 2rem 0 1.5rem;
     color: var(--color-white);
-    font-family: "Montserrat Alternates";
     font-style: italic;
     font-size: 1rem;
 }
@@ -87,7 +86,6 @@
 
 .footerC a {
     color: var(--color-white);
-    font-family: "Montserrat Alternates";
     font-style: italic;
     font-weight: 100;
     font-size: 0.8rem;
@@ -118,5 +116,63 @@
     grid-template-areas:
         "footerL footerC footerR"
 }
+
+
+/* --- ipad air --- */
+@media (max-width: 1024px) {
+
+    .footerC {
+        grid-area: footerC;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "animation animation animation"
+            "resource interest contact"
+    }
+
+    .footerC h3 {
+        text-align: center;
+    }
+
+    .footerC div {
+        text-align: center
+    }
+
+/* --- iphone --- */
+@media (max-width: 414px) {
+
+    .footerC {
+        grid-area: footerC;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "animation"
+            "resource" 
+            "interest"
+            "contact"
+    }
+
+    .footerC h3 {
+        font-size: 0.8rem;
+    }
+
+    .resource {
+        padding: 0.6rem 0 0;
+        border-bottom: solid var(--color-grey);
+    }
+
+    .interest {
+        padding: 0.6rem 0 0;
+        border-bottom: solid var(--color-grey);
+    }
+
+    .contact {
+        padding: 0.6rem 0 0;
+        border-bottom: solid var(--color-grey);
+    }
+}
+
 
 </style>

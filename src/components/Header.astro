@@ -1,7 +1,7 @@
 ---
 // import logo images in a variable logo, and in the <img> tags, we use src={logo}
 // this is called dynamic rendering, because we are rendering in runtime, I guess
-import logo from '../images/ladybug3.svg';
+import logo from '../assets/images/ladybug3.svg';
 ---
 <div class="header">
     <div class="headerL">
@@ -52,7 +52,7 @@ import logo from '../images/ladybug3.svg';
 }
 
 .headerC a {
-    color: #fff;
+    color: var(--color-white);
     font-size: 1.2rem;
     margin: 0 0 0 2rem;
     font-family: "slkscr";
@@ -73,6 +73,16 @@ import logo from '../images/ladybug3.svg';
     grid-template-rows: auto;
     grid-template-areas: 
         "headerL headerC headerR"
+}
+
+@media (max-width: 414px) {
+    .headerC a {
+        font-size: 1rem;
+    }
+
+    .logo img {
+        width: 35px;
+    }
 }
 
 </style>
