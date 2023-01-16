@@ -45,6 +45,18 @@
 }
 
 
+/* text-selected color */
+::selection {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+::-moz-selection { /* Code for Firefox */
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+
 body {
     font-family: 'Montserrat Alternates';
     padding: 4rem 14rem 4rem;

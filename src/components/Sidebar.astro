@@ -9,10 +9,10 @@ import wechatIcon from '../assets/images/wechat.svg'
 
 
 <div class="side-Link">
-    <a href="https://github.com/mikiya09"><img class="side-icon" src={githubIcon} width=25 alt="" /></a>
-    <a href="https://www.youtube.com/channel/UChQ5ymtPMpgAHoDttosMMdg"><img class="side-icon" src={youtubeIcon} width=25 alt="" /></a>
-    <a href="https://space.bilibili.com/9863181?spm_id_from=333.1007.0.0"><img class="side-icon" src={bilibiliIcon} width=25 alt="" /></a>
-    <img class="side-icon" src={wechatIcon} width=25 alt="" />
+    <div class="side-icon" ><a href="https://github.com/mikiya09"><img src={githubIcon} width=25 alt="" /></a></div>
+    <div class="side-icon" ><a href="https://www.youtube.com/channel/UChQ5ymtPMpgAHoDttosMMdg"><img src={youtubeIcon} width=25 alt="" /></a></div>
+    <div class="side-icon" ><a href="https://space.bilibili.com/9863181?spm_id_from=333.1007.0.0"><img src={bilibiliIcon} width=25 alt="" /></a></div>
+    <div class="side-icon" ><a href="/"><img src={wechatIcon} width=25 alt="" /></a></div>
 </div>
 
 
@@ -48,15 +48,29 @@ import wechatIcon from '../assets/images/wechat.svg'
     /* justify-content: flex-end; */
 }
 
+
 .side-icon {
-    margin: 1rem 5rem 1rem;
+    margin: 1rem 0em 1rem;
+}
+
+.side-icon:hover {
+    /* width: 2rem; */
+}
+
+.side-icon img {
+    transition: linear;
+}
+
+.side-icon img:hover {
+    width: 1.4rem;
+    transition: linear;
 }
 
 
 /* --- ipad pro --- */
 @media (max-width: 1024px) {
     .side-icon {
-        margin: 1rem 2.5rem 1rem;
+        /* margin: 1rem 2.5rem 1rem; */
         width: 25px;
     }
 }
@@ -64,7 +78,7 @@ import wechatIcon from '../assets/images/wechat.svg'
 /* --- iphone --- */
 @media (max-width: 640px) {
     .side-icon {
-    margin: 1rem 1.2rem 1rem;
+        margin: 1rem 1.2rem 1rem;
         width: 17px;
     }
 }

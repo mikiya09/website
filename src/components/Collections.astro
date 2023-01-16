@@ -36,9 +36,11 @@ const { headings, contents, activeHeaderColor = "#ab1c0f", inactiveHeaderColor =
         </div>
         <div class="tabs-cover">
             <div class="tabs-content">
-                <p class="tab">I am working on&nbsp;<a href="/">them</a></p>
-                <p class="tab">a neovim colorscheme:<a href="/">&nbsp; kabutack.nvim</a></p>
-                <p class="tab">Updating...</p>
+                <div><p class="tab">I am working on&nbsp;<a href="/research">them</a></p></div>
+                <div><p class="tab">I wrote a neovim
+                    colorscheme<a href="https://github.com/mikiya09/kabutack.nvim">&nbsp;kabutack.nvim,</a>
+                    which can also be found in my<a href="https://github.com/mikiya09">&nbsp;github</a>.</p></div>
+                <div><p class="tab">Updating...</p></div>
             </div>
         </div>
     </div>
@@ -88,6 +90,8 @@ in css setting cursor property to pointer means whichever tag have this class is
     background: var(--color-white);
     color: var(--color-black);
 }
+
+
 
 .tab {
     margin: 1rem;
@@ -165,7 +169,7 @@ createTab()
 
     function setTab(index) {
       if (current_tab_index > -1) {
-        tab_headers[current_tab_index].style.fontWeight = 400;
+        tab_headers[current_tab_index].style.fontWeight = 800;
         tab_headers[current_tab_index].style.color = inactiveHeaderColor;
         tab_contents[current_tab_index].style.display = 'none';
       }

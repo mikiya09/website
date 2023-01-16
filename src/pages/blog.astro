@@ -51,7 +51,7 @@ new stuff:
         <div class="post">
             {posts.map(post => (
                 <Array blogArrayStyle={true}>
-                    <h3>{post.frontmatter.title}</h3>
+                    <a class="post-link" href={`/${post.frontmatter.slug}`}><h3>{post.frontmatter.title}</h3></a>
                     <div class="post-info">
                         <p>By <strong>{post.frontmatter.author}</strong>
                         on {new Date(post.frontmatter.date).toLocaleDateString()}</p>
@@ -76,6 +76,11 @@ new stuff:
     color: var(--color-white);
 }
 
+.post-link h3:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+}
+
 .post-info p {
     margin: 0.5rem 0;
     font-weight: 100;
@@ -94,6 +99,11 @@ new stuff:
     border-radius: 0.5rem;
     padding: 0.5rem;
     font-size: 0.9rem;
+}
+
+.blog-btn:hover {
+    background: var(--color-black);
+    color: var(--color-white);
 }
 
 /* --- ipad air --- */
