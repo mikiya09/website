@@ -24,7 +24,7 @@ import logo from '../assets/images/ladybug3.svg';
         </button>
     </div>
     <div class="headerR">
-        <!-- <div class="mobile-nav"> -->
+       <!-- <div class="mobile-nav"> -->
         <!--     <div> -->
         <!--         <a href="/">HOME</a> -->
         <!--         <a href="/research">RESEARCH</a> -->
@@ -33,13 +33,7 @@ import logo from '../assets/images/ladybug3.svg';
         <!-- </div> -->
     </div>
 </div>
-<!-- <div class="mobile-nav"> -->
-<!--     <div> -->
-<!--         <a href="/">HOME</a> -->
-<!--         <a href="/research">RESEARCH</a> -->
-<!--         <a href="/blog">BLOG</a>  -->
-<!--     </div> -->
-<!-- </div> -->
+
 
 
 
@@ -116,14 +110,6 @@ not the whole header section, because that will block the content toggle content
 }
 
 
-.mobile-nav a {
-    display: flex;
-    padding: 2rem;
-    color: var(--color-white);
-    border-bottom: solid 1px var(--color-bg);
-}
-
-
 
 
 /* --- ipad pro: setting toggle menu starting from the resolution of ipad pro 1024px --- */
@@ -144,10 +130,10 @@ not the whole header section, because that will block the content toggle content
 
     .menu {
         /* display: none; */
+        left: 100%;
         position: fixed;
         background: hsl(0 0% 10% / 0.5);
-        position: fixed;
-        inset: 0 0 0 30%;
+        /* inset: 0 0 0 30%; */
         z-index: 98;
         /* 
         css animation slide the block on its x-axis: 
@@ -163,23 +149,20 @@ not the whole header section, because that will block the content toggle content
 
 
     .menu[data-visible="true"] {
+        left: 0;
+        right: 0;
         transform: translateX(0%);
+        padding: 20rem;
     }
-
-
-
-
-
 
 
     .mobile-nav {
-        /* background: hsl(0 0% 100% / 0.1); */
-        background: hsl(0 0% 10% / 0.5);
-        backdrop-filter: blur(1rem);        /* blurring effect, but not all browser support this */
         position: fixed;
-        inset: 0 0 0 40%;                   /* inset is the shorthand  for top bottom left right setting */
-                                            /* just like padding is the shorthand for adding space at the edge */
+        background: hsl(0 0% 10% / 0.5);
+        inset: 0 0 0 30%;
+        z-index: 98;
     }
+
 
     .hamburger {
         display: block;
@@ -219,20 +202,20 @@ not the whole header section, because that will block the content toggle content
      and even you move your finger away, the screen will still think you are touching it 
      so still displaying the hover effect, that's why I comment it out for now
      */
-    .hamburger.is-active span:nth-child(1) {
+    .hamburger span:nth-child(1) {
         transform: translate(0px, -2px) rotate(45deg);
     }
 
-    .hamburger.is-active span:nth-child(2) {
+    .hamburger span:nth-child(2) {
         opacity: 0;
         transform: translateX(15px);
     }
     
-    .hamburger.is-active span:nth-child(3) {
+    .hamburger span:nth-child(3) {
         transform: translate(-3px, 3px) rotate(-45deg);
     }
 
-    .hamburger.is-active:hover span {
+    .hamburger:hover span {
         /* background-color: var(--color-blue); */
         background-color: transparent;
         border: solid var(--color-bg);
@@ -289,10 +272,13 @@ when event is triggered, this pointer is the .hamburger div that is selected, an
 and toggle it, but "this" pointer only works if there is only one tag inside.
 if several tags need to be actived at the same time, use their variable name for calling the methods 
 also: 'is-active' seems like a built default method to me, because I don't actually know where I called it
+
+btw, "data-visible" is a custom attribute that just like class or id, and it primarily used for visibility
 */
     const menu = document.querySelector('.menu');
     const hamburger = document.querySelector('.hamburger');
 
+    /* const hidden_navbar = document.querySelector(''); */
     hamburger.addEventListener("click", () => {
         const visibility = menu.getAttribute("data-visible");
     
