@@ -61,6 +61,13 @@ body {
     font-family: 'Montserrat Alternates';
     padding: 4rem 14rem 4rem;
     background: var(--color-bg);
+    /* 
+    for the slide menu in the mobile device: 
+    if for some reason that the menu block slide out of the screen area/size 
+    that's called an overflow, and we can hidden that by setting overflow-x property
+    x means on the x-axis the horitonzal level
+    */
+    overflow-x: hidden;
 }
 
 
