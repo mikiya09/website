@@ -53,17 +53,15 @@ import wechatIcon from '../assets/images/wechat.svg'
     margin: 1rem 0em 1rem;
 }
 
-.side-icon:hover {
-    /* width: 2rem; */
-}
+
 
 .side-icon img {
-    transition: linear;
+    transition: 0.4s;
 }
 
 .side-icon img:hover {
-    width: 1.4rem;
-    transition: linear;
+    /* transform: translate(0px, -2px) rotate(2deg); */
+    transform: translateX(10px);
 }
 
 
@@ -77,9 +75,8 @@ import wechatIcon from '../assets/images/wechat.svg'
 
 /* --- iphone --- */
 @media (max-width: 640px) {
-    .side-icon {
-        margin: 1rem 1.2rem 1rem;
-        width: 17px;
+    .side-icon img {
+        width: 1rem;
     }
 }
 

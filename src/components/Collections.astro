@@ -169,11 +169,11 @@ createTab()
 
     function setTab(index) {
       if (current_tab_index > -1) {
-        tab_headers[current_tab_index].style.fontWeight = 800;
+        tab_headers[current_tab_index].style.fontWeight = 100;
         tab_headers[current_tab_index].style.color = inactiveHeaderColor;
         tab_contents[current_tab_index].style.display = 'none';
       }
-      tab_headers[index].style.fontWeight = 800;
+      tab_headers[index].style.fontWeight = 100;
       tab_headers[index].style.color = activeHeaderColor;
       tab_contents[index].style.display = 'flex';
       current_tab_index = index;

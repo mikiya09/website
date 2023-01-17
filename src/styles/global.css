@@ -47,12 +47,12 @@
 
 /* text-selected color */
 ::selection {
-    background: var(--color-white);
+    background: var(--color-grey);
     color: var(--color-black);
 }
 
 ::-moz-selection { /* Code for Firefox */
-    background: var(--color-white);
+    background: var(--color-grey);
     color: var(--color-black);
 }
 
