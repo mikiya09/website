@@ -217,15 +217,16 @@ layer concepts:
     .hamburger span {
         display: block;
         width: 2rem;
-        height: 1.5px;
+        height: 0.5px;
         position: relative;
         margin: 5px 0 0;
-        border: solid var(--color-white);
+        border: solid var(--color-white) 1px;
         border-radius: 10px;
         background: var(--color-white);
         transition: 350ms;
     }
 
+    /* is-active toggle animation */
     .hamburger.is-active span:nth-child(1) {
         transform: translate(0px, 9px) rotate(45deg);
     }
