@@ -138,19 +138,6 @@ layer concepts:
 /* --- for window size less than 1024px: we hide the normal menu and show the hamburger button --- */
 @media (max-width: 1024px) {
 
-    /* 
-    blur effect:
-    1) not all browser support blurring effect, such as firefox 
-    2) by adding an if statement in css so that it will fall back to certain style for the browsers not supporting 
-    3) if supports, run code in the curly brackets; otherwise fall back to original
-    4) no necessary actually, because if the browser doesn't support it will omit blur by default
-    */
-    @supports (backdrop-filter: blur(1rem)) {
-        .mobile-nav {
-            background: hsl(0 0% 100% / 0.1);
-            backdrop-filter: blur(1rem);
-        }
-    }
 
     /* --- setup the toggle menu --- */
     .menu {
@@ -184,8 +171,7 @@ layer concepts:
         display: flex;
         flex-direction: column;
         position: fixed;
-        background: hsl(0 0% 100% / 0.1);
-        backdrop-filter: blur(1rem);
+        background: var(--color-black);
         z-index: 98;                        /* adding z-index to 98 just below the hamburger button  */
         transition: transform 350ms ease-out;
     }
@@ -198,10 +184,23 @@ layer concepts:
     4) here we achieve it by using the customed property "data-visible", usually this is used for show or hide thing
     */
     .mobile-nav[data-visible="true"] {
-        transform: translateX(-50%);
+        transform: translateX(-40%);
     }
 
 
+    /* 
+    blur effect:
+    1) not all browser support blurring effect, such as firefox 
+    2) by adding an if statement in css so that it will fall back to certain style for the browsers not supporting 
+    3) if supports, run code in the curly brackets; otherwise fall back to original
+    4) no necessary actually, because if the browser doesn't support it will omit blur by default
+    */
+    @supports (backdrop-filter: blur(1rem)) {
+        .mobile-nav {
+            background: hsl(0 0% 100% / 0.1);
+            backdrop-filter: blur(1rem);
+        }
+    }
 
     /* --- setup the hamburger button --- */
     .hamburger {
