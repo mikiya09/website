@@ -1,10 +1,11 @@
 # Personal Website
-**&#x23f5; responsive navbar: [[1]](https://www.youtube.com/watch?v=HbBMp6yUXO0&t=1810s)[[2]](https://www.youtube.com/watch?v=ZzQdVy8b8n4)** <br>
-**&#x23f5; discord bot: [check this](https://www.youtube.com/watch?v=Qc9uPgGmQ7I)**
+**&#x23f5; [3D effect](https://www.youtube.com/watch?v=wxvSHOrBHbw)** <br>
+**&#x23f5; [matrix rain](https://www.youtube.com/watch?v=f5ZswIE_SgY)** <br>
+**&#x23f5; [discord bot](https://www.youtube.com/watch?v=Qc9uPgGmQ7I)** <br>
 
 ## Learn more markdown features later
-[![check this](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![check this as well](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/basics)
+[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/basics)
 
 
 
