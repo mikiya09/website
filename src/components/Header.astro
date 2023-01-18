@@ -243,17 +243,23 @@ layer concepts:
 /* --- iphone --- */
 @media (max-width: 640px) {
 
+    /* 
+    this is an unexpected issue
+    1) probably is because the layout I have for header 
+    2) once the size of header is changed, when the mobile navbar is toggle out 
+    3) the whole page will be push down a little bit, which is annoying 
+    4) I not sure, so do not change the size of icon img right now
+    */ 
     .headerL img {
-        width: 25px;
-        /* width: 35px; */
+        width: 35px;
     }
 
     .mobile-nav {
-        /* padding: 10rem 0 0; */
+        padding: 10rem 0 0;
     }
 
     .mobile-nav a {
-        /* font-size: 0.8rem; */
+        font-size: 0.8rem;
     }
 }
 
