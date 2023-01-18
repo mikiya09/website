@@ -1,31 +1,34 @@
----
-// import logo images in a variable logo, and in the <img> tags, we use src={logo}
-// this is called dynamic rendering, because we are rendering in runtime, I guess
+
+
+--- 
+/* 
+import logo images in a variable logo, and in the <img> tags, we use scr={logo} 
+this is called dynamic readering, because we are rendering the images in runtime, I guess 
+*/
 import logo from '../assets/images/ladybug3.svg';
----
+--- 
+
 <div class="header">
     <div class="headerL">
-        <div class="logo">
-            <a href="/">
-                <img src={logo} width=45 alt="" />
-            </a>
-        </div>
+        <a href="/">
+            <img src={logo} width=45 alt="" />
+        </a>
     </div>
     <div class="headerC">
-        <div id="menu" data-visible="false" class="menu">
+        <div id="menu" data-visible='false' class="menu">
             <div><a href="/" class="active">HOME</a></div>
             <div><a href="/research">RESEARCH</a></div>
             <div><a href="/blog">BLOG</a></div>
         </div>
         <button aria-controls="menu" class="hamburger sr-only">
             <span></span>
-            <span></span> 
-            <span></span> 
+            <span></span>
+            <span></span>
         </button>
     </div>
     <div class="headerR">
         <div id="mobile-nav" data-visible="false" class="mobile-nav">
-            <div><a href="/" class="active">HOME</a></div>
+            <div><a href="/">HOME</a></div>
             <div><a href="/research">RESEARCH</a></div>
             <div><a href="/blog">BLOG</a></div>
         </div>
@@ -33,56 +36,50 @@ import logo from '../assets/images/ladybug3.svg';
 </div>
 
 
-
-
-   
+<!-- --- style --- -->
 <style>
-/* Header */
-/* ------- grid display -------- */
+
+/* -------- grid display for the .header class, outter container -------- */
 .headerL {
     grid-area: headerL;
-}
-
-.headerL img:hover {
-    /* width: 2.7rem; */
-}
-
-.logo {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.logo img {
-    transition: 0.4s;
-}
-
-.logo img:hover {
-    transform: translate(0px, -2px) rotate(45deg);
-}
-
-/* hide the toggle button for resolution greater than 1024px */
-/* 
-z-index means the how much you are far away from the first layer of the web page, you can also say the height from surface
-since when you are adding new elements to the web page, you always adding on the top 
-when something A is on top of B in terms of layer, A covers B, you will not be able to click B in that case 
-but we want to always be able to click on the menu, so we set it to the very top, which is z-index = 99
-and later when we setup the toggle menu for hamburger button. We just want the toggle is at the top layer 
-not the whole header section, because that will block the content toggle content when we click on it
-*/
-.hamburger {
-    display: none;
-    z-index: 99;
+.headerC {
+    grid-area: headerC;
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
 
 .headerR {
     grid-area: headerR;
 }
 
-.headerR a {
+.header {
+    background: var(--color-bg);
+    padding: 1.5rem 0;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "headerL headerC headerR"
 }
 
+/* --- large monitor such as 24 inches --- */
+@media (max-width: 1700px) {
+    .header {
+        grid-template-columns: 12% 76% 12%;
+    }
+}
+/* -------- grid display for the .header class, outter container -------- */
 
 
+/* --- headerC/L/R (also refer to above) --- */
 .headerC a {
     color: var(--color-white);
     font-size: 1.2rem;
@@ -95,180 +92,14 @@ not the whole header section, because that will block the content toggle content
 }
 
 
-.headerC {
-    grid-area: headerC;
-    display: flex;
-    align-items: center;
-    justify-content: right;
+/* --- Logo: it is in the .headerL class --- */
+.headerL img {
+    transition: 0.4s;
 }
 
-.menu {
-    display: flex;
+.headerL img:hover {
+    transform: translate(0px, -2px) rotate(45deg);
 }
-
-.mobile-nav {
-    padding: 0;
-    margin: 0;
-}
-
-/* --- ipad pro: setting toggle menu starting from the resolution of ipad pro 1024px --- */
-@media (max-width: 1024px) {
-
-    /* 
-    not all the browser support blurring effect, such as firefox
-    by adding an if statement in css could go around with the issue 
-    if the browser supports backdrop-filter: blur(1rem), then run the code inside; 
-    otherwise fall back to original setting
-    */ 
-    @supports (backdrop-filter: blur(1rem)) {
-        .menu {
-            display: none;
-        }
-        .mobile-nav {
-            background: hsl(0 0% 100% / 0.1);
-            backdrop-filter: blur(1rem);
-         }
-    }
-
-    
-    .mobile-nav div {
-        padding: 2rem;
-    }
-
-
-    .mobile-nav {
-        /* display: none; */
-        left: 100%;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        width: 100%;
-        position: fixed;
-        background: hsl(0 0% 10% / 0.5);
-        min-height: 100%;
-        /* inset: 0 0 0 30%; */
-        z-index: 98;
-        /* 
-        css animation slide the block on its x-axis: 
-        positive value meaning to the right, negative to the left
-        transition makes the animation smooth
-        */
-        /* transform: translateX(100%); */
-        transition: transform 350ms ease-out;
-
-        /* positioning */
-        flex-direction: column;
-    }
-
-    .menu[data-visible="false"] {
-    }
-
-
-    .mobile-nav[data-visible="true"] {
-        transform: translateX(-100%);
-    }
-
-    /* .menu[close="false"] { */
-    /*     left: 100%; */
-    /*     right: 100%; */
-    /*     transform: translateX(100%); */
-    /*     transition: transform 350ms ease-out; */
-    /* } */
-
-
-
-    /**/
-    /* .mobile-nav { */
-    /*     position: fixed; */
-    /*     background: hsl(0 0% 10% / 0.5); */
-    /*     inset: 0 0 0 30%; */
-    /*     z-index: 98; */
-    /* } */
-
-
-    .hamburger {
-        display: block;
-        position: relative;
-        user-select: none;
-
-        appearance: none;
-        border: none;
-        outline: none;
-        background: none;
-        cursor: pointer;
-    }
-
-    .hamburger span {
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-
-        background-color: var(--color-white);
-        border-radius: 6px;
-        transform-origin: 0 0;
-        transition: 0.4s;
-    }
-
-     .hamburger:hover span:nth-child(2) {
-         transform: translateX(10px); 
-         background-color: var(--color-red); 
-     } 
-
-     /* 
-     we have three children <span /> inside the hamburger div, the command:nth-child(x) means select a specified child 
-     also the reason for comment out above css code is because when click the button using ipad or iphone and close 
-     and even you move your finger away, the screen will still think you are touching it 
-     so still displaying the hover effect, that's why I comment it out for now
-     */
-    /* .hamburger span:nth-child(1) { */
-    /*     transform: translate(0px, -2px) rotate(45deg); */
-    /* } */
-    /**/
-    /* .hamburger span:nth-child(2) { */
-    /*     opacity: 0; */
-    /*     transform: translateX(15px); */
-    /* } */
-    /*  */
-    /* .hamburger span:nth-child(3) { */
-    /*     transform: translate(-3px, 3px) rotate(-45deg); */
-    /* } */
-
-    /* .hamburger:hover span { */
-    /*     /* background-color: var(--color-blue); */ 
-    /*     background-color: transparent; */
-    /*     border: solid var(--color-bg); */
-
-    
-}
-
-
-
-
-
-
-
-.header {
-    background: var(--color-bg);
-    padding: 1.5rem 0;
-    /* border-top: solid; */
-    border-top-right-radius: 2rem;
-    border-top-left-radius: 2rem;
-    display: grid;
-    grid-template-columns: 15% 70% 15%;
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "headerL headerC headerR"
-}
-
-/* --- large monitor such as 24 inches --- */
-@media (max-width: 1700px) {
-    .header {
-        grid-template-columns: 12% 76% 12%;
-    }
-}
-
 
 
 /* --- iphone --- */
@@ -277,42 +108,178 @@ not the whole header section, because that will block the content toggle content
         font-size: 1rem;
     }
 
-    .logo img {
+    .headerL img {
         width: 35px;
+    }
+}
+
+/*
+-------- menu and navbar -------
+layer concepts: 
+1) in web page development, you can think of the distributing components onto the a blank paper 
+2) you can put components on top of the other components, to reach a some speicial effect like toggle navbar in mobile device 
+3) so here we have a propertie called z-index: just understand it as the value in z-axis in a coordinate system 
+4) for toggle navbar to work, toggle button should always be on the top. So nothing is gonna prevent users from clicking
+*/
+
+/* --- for window size larger than 1024px: we show the normal menu and hide the hamburger menu, as well as the mobile-nav --- */
+.menu {
+    display: flex;
+}
+
+.hamburger {
+    display: none;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+/* --- for window size less than 1024px: we hide the normal menu and show the hamburger button --- */
+@media (max-width: 1024px) {
+
+
+    /* --- setup the toggle menu --- */
+    .menu {
+        display: none;
+    }
+
+    .mobile-nav div {
+        padding: 2rem 4rem 2rem;
+        border-bottom: solid;
+    }
+
+    .mobile-nav a {
+        font-family: "slkscr";
+        color: var(--color-white);
+    }
+
+    /* 
+    inset: 0 0 0 100%
+    1) the short hand for setting the how much a div will take off the space in the page 
+        - top: 0 
+        - right: 0 
+        - bottom: 0 
+        - left: 100%
+    2) for exmaple, if setting top: 0, meaning there no empty space on the top of this contaier
+    3) just like margin/padding properties
+    */
+    .mobile-nav {
+        inset: 0 0 0 100%;
+        width: 100%;
+        padding: 15rem 0 0;             /* adding space between navbar menu and the top, so they won't overlap with hamburger */
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        background: hsl(0 0% 10% / 0.5);
+        z-index: 98;                        /* adding z-index to 98 just below the hamburger button  */
+        transition: transform 350ms ease-out;
+    }
+
+    /* 
+    translateX(): 
+    1) css animation slide the block on its x-axis 
+    2) positive value means moving to the right, while negative move to the left 
+    3) usually we add transition: property for the letting the animation goes smoothly, add to the div that were animated
+    4) here we achieve it by using the customed property "data-visible", usually this is used for show or hide thing
+    */
+    .mobile-nav[data-visible="true"] {
+        transform: translateX(-40%);
+    }
+
+    /* 
+    blur effect:
+    1) not all browser support blurring effect, such as firefox 
+    2) by adding an if statement in css so that it will fall back to certain style for the browsers not supporting 
+    3) if supports, run code in the curly brackets; otherwise fall back to originalsj
+    */
+    @supports (backdrop-filter: blur(1rem)) {
+        .mobile-nav {
+            background: hsl(0 0% 100% / 0.1);
+            backdrop-filter: blur(1rem);
+        }
+    }
+
+    /* --- setup the hamburger button --- */
+    .hamburger {
+        z-index: 99;            /* setting the z-index on top of the mobile-nav, set to 9999 for absolutely top if you want */
+        display: block;
+        position: relative;
+        user-select: none;
+        
+        appearance: none;       /* --- from here to below is the setting for no display anything in the span background  --- */
+        border: none;           /* --- */
+        outline: none;          /* --- */
+        background: none;       /* --- */
+        cursor: pointer;        /* --- to here ---  */
+    }
+
+    .hamburger span {
+        display: block;
+        width: 2rem;
+        height: 1.5px;
+        position: relative;
+        margin: 5px 0 0;
+        border: solid var(--color-white);
+        border-radius: 10px;
+        background: var(--color-white);
+        transition: 350ms;
+    }
+
+    .hamburger.is-active span:nth-child(1) {
+        transform: translate(0px, 9px) rotate(45deg);
+    }
+
+    .hamburger.is-active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    .hamburger.is-active span:nth-child(3) {
+        transform: translate(0px, -9px) rotate(-45deg);
+    }
+
+    .hamburger.is-active:hover span {
+        background-color: transparent;
+        border: solid var(--color-bg);
     }
 }
 
 </style>
 
 
-<!-- --- script --- -->
 <script>
-/*
-using querySelector find the .hamburger div, and listen to the click event
-when event is triggered, this pointer is the .hamburger div that is selected, and find the is-active child inside 
-and toggle it, but "this" pointer only works if there is only one tag inside.
-if several tags need to be actived at the same time, use their variable name for calling the methods 
-also: 'is-active' seems like a built default method to me, because I don't actually know where I called it
-
-btw, "data-visible" is a custom attribute that just like class or id, and it primarily used for visibility
+/* 
+Find tags/class: 
+1) querySelector() is a method for finding class such as .hamburger div 
+2) document.querySelector('.mobile-nav') means look through all the html code and find where class="mobile-nav"
+3) addEventListener() is a method for capture user operation on the html object 
+4) hamburger.addEventListener("click" () => {}): for event in .hamburger class,
+    - if a click is found then do what the arrow function tells
+    - in the arrow function you write what you write to the normal function
+    - since we set data-visible as a string value in the html, so we can put it into a variable 
+    - later we just need to check what value is the in that variable
+5) setAttribute() function is just for setting up the value
+6) is-active is a built-in method that check if a some tags are having events happening on them
+    - we have a variable capture the hamburger tag, so checking its span children(classList) what values they are taking when active 
+    - in our css section we set span to have some animated behaviors, 
+    - and .toggle('is-active') method keep it active, so animation continues to hold until inactive
 */
-    const menu = document.querySelector('.mobile-nav');
+    const mobile_menu = document.querySelector('.mobile-nav');
     const hamburger = document.querySelector('.hamburger');
 
-    /* const hidden_navbar = document.querySelector(''); */
     hamburger.addEventListener("click", () => {
-        const visibility = menu.getAttribute("data-visible");
-    
-        if (visibility === "false" ) {
-            menu.setAttribute('data-visible', true);
-            menu.setAttribute('aria-expanded', true);
-            
+        /* is-active toggle */
+        hamburger.classList.toggle('is-active');
+        /* variables for holding the value for data-visible */
+        const visibility = mobile_menu.getAttribute("data-visible");
+        /* if statement to check */
+        if (visibility === "false") {
+            mobile_menu.setAttribute('data-visible', true);
         }
-        else if (visibility === "true" ) {
-            menu.setAttribute('data-visible', false);
-            menu.setAttribute('aria-expanded', false);
+        else if (visibility === "true") {
+            mobile_menu.setAttribute('data-visible', false);
         }
     });
-
 
 </script>
