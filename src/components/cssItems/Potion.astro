@@ -18,153 +18,151 @@
 
 
 .potion {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-rows: 1fr 1fr;
-  /* background: #8FBCBB; */
-  margin: 0px 0px 0px 0px;
-  height: 80px;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-rows: 1fr 1fr;
+    /* background: #8FBCBB; */
+    margin: 0px 0px 0px 0px;
+    height: 80px;
 }
 
 
 .bottle {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50px;
-  height: 50px;
-  /* background: blue; */
-  background: rgba(255, 255, 255, 0.1);
-  border: 8px solid transparent;
-  border-radius: 50%; 
-  position: relative;
-  top: 20px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    height: 50px;
+    /* background: blue; */
+    background: rgba(255, 255, 255, 0.1);
+    border: 8px solid transparent;
+    border-radius: 50%; 
+    position: relative;
+    top: 20px;
 
-  animation: animate 5s linear infinite;
+    animation: animate 5s linear infinite;
 }
 
 
 
 @keyframes animate {
-  0%
-  {
+    0%
+    {
     filter: hue-rotate(0deg);
     transform: rotate(0deg);
-  }
-  25% 
-  {
+    }
+    25% 
+    {
     transform: rotate(15deg);
-  }
-  50% 
-  {
+    }
+    50% 
+    {
     transform: rotate(0deg);
-  }
-  75%
-  {
+    }
+    75%
+    {
     transform: rotate(-15deg);
-  }
-  100%
-  {
+    }
+    100%
+    {
     filter: hue-rotate(360deg);
     transform: rotate(0deg);
-  }
+    }
 }
 
 
 
 .bottle::before {
-  content: '';
-  position: absolute;
-  top: -11px;
-  left: 25%;
-  transform: translteX(-50%);
-  width: 35%;
-  height: 10px;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  /* box-shadow: 0 4px #444; */
-  box-shadow: 0 4px rgba(255, 255, 254, 0.1);
+    content: '';
+    position: absolute;
+    top: -11px;
+    left: 25%;
+    transform: translteX(-50%);
+    width: 35%;
+    height: 10px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    /* box-shadow: 0 4px #444; */
+    box-shadow: 0 4px rgba(255, 255, 254, 0.1);
 }
 
 
 .bottle::after {
-  content: '';
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  width: 20px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.05);
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 20px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 
 .liquid {
-  position: absolute;
-  top: 50%;
-  left: 1px;
-  right: 1px;
-  bottom: 1px;
-  background: #41c1fb;
-  border-bottom-left-radius: 150px;
-  border-bottom-right-radius: 150px;
-  filter: drop-shadow(0 0 90px #41c1fb);
-  transform-origin: top center;
-  animation: animateLiquid 5s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    background: #41c1fb;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    filter: drop-shadow(0 0 90px #41c1fb);
+    transform-origin: top center;
+    animation: animateLiquid 5s linear infinite;
 }
 
 
 @keyframes animateLiquid {
-  0%
-  {
+    0%
+    {
     transform: rotate(0deg);
-  }
-  25%
-  {
+    }
+    25%
+    {
     transform: rotate(-20deg);
-  }
-  50%
-  {
+    }
+    50%
+    {
     transform: rotate(0deg);
-  }
-  75%
-  {
-  transform: rotate(20deg);
-  }
-  100%
-  {
+    }
+    75%
+    {
+    transform: rotate(20deg);
+    }
+    100%
+    {
     transform: rotate(0deg);
-  }
+    }
 }
 
 
 .liquid::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  width: 100%;
-  height: 10px;
-  background: #1fa4e0;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 90px #41c1fb);
+    content: '';
+    position: absolute;
+    top: -5px;
+    width: 100%;
+    height: 10px;
+    background: #1fa4e0;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 90px #41c1fb);
 }
 
 
 .shadow {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  height: 9px;
-  width: 45px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 9px;
+    width: 45px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
 
-  position: relative;
-  top: -6px;
+    position: relative;
+    top: -6px;
 }
-
-
 
 
 
