@@ -82,19 +82,20 @@ import logo from '../assets/images/ladybug3.svg';
 /* --- headerC/L/R (also refer to above) --- */
 .headerC a {
     color: var(--color-white);
-    font-size: 1.2rem;
+    font-size: 21px;
     margin: 0 0 0 2rem;
     font-family: "slkscr";
+    /* font-family: "Montserrat Alternates"; */
 }
 
 .headerC a:hover {
-    color: var(--color-green);
+    color: var(--color-grey);
 }
 
 
 /* --- Logo: it is in the .headerL class --- */
 .headerL img {
-    transition: 0.4s;
+    transition: 350ms ease-out;
 }
 
 .headerL img:hover {
@@ -127,7 +128,7 @@ layer concepts:
 }
 
 /* --- for window size less than 1024px: we hide the normal menu and show the hamburger button --- */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
 
 
     /* --- setup the toggle menu --- */
@@ -241,7 +242,7 @@ layer concepts:
 
 
 /* --- iphone --- */
-@media (max-width: 640px) {
+@media (max-width: 690px) {
 
     /* 
     this is an unexpected issue

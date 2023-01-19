@@ -23,26 +23,24 @@ import cv from '../assets/file/moanin.pdf';
 ---
 
 
-<div class="profile-box">
-    <div class="profile-grid">
-        <div class="profile">
-            <img src={profileImg} alt="">
+<div class="profile-grid">
+    <div class="profile">
+        <img src={profileImg} alt="">
+    </div>
+    <div class="introduction">
+        <div class="intro-text">
+            <h2>{title}</h2>
+            <p>Working on natural language process(NLP)/machine learning(ML) 
+            research and projects right now. Details in the collections below.
+            I am interested in something that I can question about, the answer is not important though. 
+            <a href="https://www.youtube.com/watch?v=lHYcJ8k7FBM">Jazz</a>
+            /<a href="https://www.youtube.com/watch?v=Y4HWvsGs0rY">Jazz hip-hop</a> are my favorite genres. 
+            <a href="https://en.wikipedia.org/wiki/Christopher_Nolan">
+            Christopher Nolan</a>&nbsp;is impressive when he is playing with time 
+            in his <a href="https://www.youtube.com/watch?v=2LqzF5WauAw">movies</a>.</p>
         </div>
-        <div class="introduction">
-            <div class="intro-text">
-                <h2>{title}</h2>
-                <p>Working on natural language process(NLP)/machine learning(ML) 
-                research and projects right now. Details in the collections below.
-                I am interested in something that I can question about, the answer is not important though. 
-                <a href="https://www.youtube.com/watch?v=lHYcJ8k7FBM">Jazz</a>
-                /<a href="https://www.youtube.com/watch?v=Y4HWvsGs0rY">Jazz hip-hop</a> are my favorite genres. 
-                <a href="https://en.wikipedia.org/wiki/Christopher_Nolan">
-                Christopher Nolan</a>&nbsp;is impressive when he is playing with time 
-                in his <a href="https://www.youtube.com/watch?v=2LqzF5WauAw">movies</a>.</p>
-            </div>
-            <div class="intro-btn">
-                <a href={cv} target="_blank">CV</a>
-            </div>
+        <div class="intro-btn">
+            <a href={cv} target="_blank">CV</a>
         </div>
     </div>
 </div>
@@ -51,16 +49,20 @@ import cv from '../assets/file/moanin.pdf';
 <style>
 
 .profile-box {
-    padding: 2rem;
-    /* border: solid; */
-    box-shadow: 13px 13px 13px var(--color-black);
-    border-radius: 2rem;
+
 }
 
 .profile-grid {
     background: var(--color-bg);
     display: grid;
     grid-template-columns: 1fr 3fr;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 1rem 0 0;
+    /* border: solid; */
+    box-shadow: 13px 13px 13px var(--color-black);
+    border-radius: 2rem;
+
 }
 
 .profile {
@@ -68,7 +70,6 @@ import cv from '../assets/file/moanin.pdf';
     justify-content: center;
     padding: 4rem;
     border: solid var(--color-grey);
-    border-radius: 1rem;
     margin: 0 1rem 0 0;
     background: var(--color-grey);
 }
@@ -80,6 +81,8 @@ import cv from '../assets/file/moanin.pdf';
     margin: 1rem;
 }
 
+.introduction {
+}
 
 .introduction h2 {
     color: var(--color-white);
@@ -147,7 +150,6 @@ import cv from '../assets/file/moanin.pdf';
         border-radius: 2rem;
     }
 
-
     .introduction h2 {
         font-size: 1.4rem;
     }
@@ -173,14 +175,14 @@ import cv from '../assets/file/moanin.pdf';
         display: flex;
         justify-content: left;
         margin: 0.5rem 0 0;
-}
+    }
 
 }
 
 
 
 /* --- ipad pro --- */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
 
     .profile-box {
     }
@@ -217,7 +219,7 @@ import cv from '../assets/file/moanin.pdf';
 
 
 /* --- iphone --- */
-@media (max-width: 640px) {
+@media (max-width: 690px) {
 
     .introduction h2 {
         font-size: 1.5rem;

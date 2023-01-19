@@ -11,7 +11,7 @@
  6) Poiret One
  */ 
 
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Maven+Pro&family=Montserrat+Alternates:ital,wght@0,100;0,400;1,100;1,400&family=Poiret+One&family=Ubuntu:wght@300;400&family=Zen+Maru+Gothic:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat+Alternates:ital,wght@0,100;0,400;1,100;1,400&family=Ubuntu:wght@300;400&family=Zen+Maru+Gothic:wght@300;400&display=swap');
 
 
 
@@ -73,7 +73,7 @@ body {
 
 hr.divider {
     border: 0.5px;
-    border-top: 1px solid var(--color-lightGreen);          /* this one is the color setting of hr */
+    border-top: 1px solid var(--color-black);          /* this one is the color setting of hr */
     margin: 6rem 0 0;
 }
 
@@ -173,7 +173,7 @@ four value:  top | right | down | left
 }
 
 /* --- ipad pro --- */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     body {
         padding: 2.5rem 7rem 2.5rem;
     }
@@ -181,7 +181,7 @@ four value:  top | right | down | left
 
 /* --- iphone --- */
 /* --- iphone 13 pro max seems to have 622 width --- */
-@media (max-width: 640px) {
+@media (max-width: 690px) {
     body {
         padding: 2rem 1rem 2rem;
     }
