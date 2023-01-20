@@ -17,7 +17,7 @@ export interface Props {
 }
 // create variable that set the default title across all pages to "testing website" for now
 // if you don't specify certain title in certain pages, it will display the default, otherwise display what you specify
-const { title = 'Xirong Cao Website' } = Astro.props as Props;
+const { title = 'Xirong Cao | Homepage' } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ const { title = 'Xirong Cao Website' } = Astro.props as Props;
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <title>Xirong Cao Website</title>
+        <title>{title}</title>
     </head>
 
     <body>

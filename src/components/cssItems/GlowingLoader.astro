@@ -1,0 +1,161 @@
+
+--- 
+/* 
+Glowing Loader object:
+
+< stlying: put it in a div and style the div in the file that import this css component >
+
+moving line: 
+1) going from left to right
+2) setting width and height to 100% is to be compatible with original box 
+3) because by default they are the same div 
+4) set it animate from left to right in a linear time sequence
+
+moving dot:
+1) ::before and ::after are pseudo-elements, they can act like divs before and after the current(selected) div
+       - you can add content(text) to it, so it will display before what current div has in <p></p> tag
+       - reference -> https://www.w3schools.com/cssref/sel_before.php
+       - or you can set the content to empty and let it behave like a div
+       - that's what the dot is, is a div after .loader and was shaped into a round style and moved by animation
+       - same logic, glowing line is div before .loader
+2) @keyframes is the time sequence of the animation
+3) the shadow of the dot starting showing effect at 15% and 20% to 40%, learn how is it shadowing later
+4) moving the dot from left to right starting from 40%, because translateX()
+5) scale() in transform property means the how big it will end up 
+       - "scale()" can take up to two parameter, x-axis and y-axis, scaling in terms of x direction and y direction
+       - by default when you set x=1 without giving the y value, then it's also 1
+       - for example in 0%, scale(0) means nothing is happening 
+       - in 5%, scale(1) means the dot become visible and grow to the size of 1
+       - the whole process takes 5% of 8 seconds linearly (already setup in animation property)
+6) assumption 
+       - assuming the distance that dot travel is calculated based on its center point 
+       - the width of the dot is 10px, the total distance is 400px 
+       - then if we set translateX(400px), meaning we want the center of the dot sit right on the end of the track
+       - but in reality, the dot is going farer than the end of the track 
+       - we can only have conclusion that the calculating point is after the center point 
+       - a pretty good guess is it starts at the end of the dot, 
+       - and that explained why setting translateX(395px) will reach right at the end of the track
+7) adjust 
+       - I want to have 15rem width long track, so in order to the reach the end right on the center of the dot 
+       - as well as unit-compatible, the translateX() distance = len(track) - width(dot) / 2
+*/
+---
+
+<div>
+    <div class="loader"></div>
+</div>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loader {
+    position: relative;
+    width: 15rem;
+    /* width: 400px; */
+    height: 4px;
+    background: #000;
+    /* padding: 0 4rem 0; */
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #62D196;
+    /* background: #0bec7c; */
+    transform-origin: left;
+    animation: animateLine 8s linear infinite;
+}
+
+/* linear time sequence setting for the glowing line */
+@keyframes animateLine
+{
+    0%,20%
+    {
+        transform: scaleX(0);
+    }
+    40%
+    {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    40.000001%,60%
+    {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    80%,100%
+    {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
+
+
+.loader::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 0.6rem;
+    /* width: 10px; */
+    height: 0.6rem;
+    /* height: 10px; */
+    background: #0bec7c;
+    border-radius: 50%;
+    animation: animateDot 8s linear infinite;
+}
+
+@keyframes animateDot 
+{
+    0% 
+    {
+        transform: translateY(-50%) scale(0);
+    }
+    5%
+    {
+        transform: translateY(-50%) scale(1);
+    }
+    15%,20%
+    {
+        transform: translateY(-50%) scale(1);
+        box-shadow: 0 0 0 4px #0bec7c22,
+        0 0 0 10px #0bec7c22,
+        0 0 20px #0bec7c,
+        0 0 40px 5px #0bec7c,
+        0 0 60px 10px #0bec7c;
+    }
+    40% 
+    {
+        transform: translateY(-50%) translateX(14.7rem) scale(1);
+        /* transform: translateY(-50%) translateX(395px) scale(1); */
+    }
+    80%
+    {
+        transform: translateY(-50%) translateX(14.7rem) scale(1);
+        /* transform: translateY(-50%) translateX(395px) scale(1); */
+        box-shadow: 0 0 0 4px #0bec7c22,
+        0 0 0 10px #0bec7c22,
+        0 0 20px #0bec7c,
+        0 0 40px 5px #0bec7c,
+        0 0 60px 10px #0bec7c;
+    }
+    95% 
+    {
+        transform: translateY(-50%) translateX(14.7rem) scale(1);
+        /* transform: translateY(-50%) translateX(395px) scale(1); */
+        box-shadow: none;
+    }
+    100%
+    {
+        transform: translateY(-50%) translateX(14.7rem) scale(0);
+        /* transform: translateY(-50%) translateX(395px) scale(0); */
+    }
+}
+
+</style>

@@ -1,31 +1,40 @@
 
-
+---
+// import Glowing Loader CSS Object
+import GlowingLoader from './cssItems/GlowingLoader.astro'
+---
 
 <footer class="footer">
     <div class="footerL">
     </div>
     <div class="footerC">
         <div class="animation">
-            <h3>animation or something in 3D</h3>
-            <h3>also a clickable thing back to the top</h3>
+            <div class="loader-box">
+                <GlowingLoader />
+                <div class="loader-text">
+                    <p>back to the top</p>
+                </div>
+            </div>
         </div>
-        <div class="resource">
-            <h3>Resource</h3>
-            <div><a href="/">Computer Science</a></div>
-            <div><a href="/">Psychology</a></div>
-            <div><a href="/">Mathematics</a></div>
-        </div>
-        <div class="interest">
-            <h3>Interests</h3>
-            <div><a href="/">Visual</a></div>
-            <div><a href="/">Auditory</a></div>
-            <div><a href="/">Idea</a></div>
-        </div>
-        <div class="contact">
-            <h3>Contact</h3>
-            <div><a href="/">+1</a></div>
-            <div><a href="/">New York, NY</a></div>
-            <div><a href="/">spacelion121319@gmail.com</a></div>
+        <div class="information">
+            <div class="resource">
+                <h3>Resource</h3>
+                <div><a href="/">Computer Science</a></div>
+                <div><a href="/">Psychology</a></div>
+                <div><a href="/">Mathematics</a></div>
+            </div>
+            <div class="interest">
+                <h3>Interests</h3>
+                <div><a href="/">Visual</a></div>
+                <div><a href="/">Auditory</a></div>
+                <div><a href="/">Idea</a></div>
+            </div>
+            <div class="contact">
+                <h3>Contact</h3>
+                <div><a href="/">+1</a></div>
+                <div><a href="/">New York, NY</a></div>
+                <div><a href="/">spacelion121319@gmail.com</a>
+            </div>
         </div>
     </div>
     <div class="footerR">
@@ -36,11 +45,6 @@
 
 <style>
 /* --- nested grid display --- */
-
-
-.animation {
-    grid-area: animation;
-}
 
 .resource {
     grid-area: resource;
@@ -54,16 +58,48 @@
     grid-area: contact;
 }
 
+.animation {
+    grid-area: animation;
+}
+
+
+.animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-text p {
+    position: relative;
+    left: 30%;
+    text-align: right;
+    margin: 0.7rem 0 0;
+    /* color: var(--color-black); */
+    color: '#000';
+}
+
+
+.information {
+    grid-area: information;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "resource interest contact"
+}
+
+
 .footerC {
     grid-area: footerC;
     display: grid;
-    grid-template-columns: 46% 18% 18% 18%;
+    grid-template-columns: 60% 40%;
+    /* grid-template-columns: 20% 20% 20% 40%; */
     grid-template-rows: auto;
     grid-template-areas: 
-        "animation resource interest contact"
+        "information animation"
 }
 
-.footerC h3 {
+.information h3 {
     /* text-align: center; */
     padding: 2rem 0 1.5rem;
     color: var(--color-white);
@@ -84,14 +120,14 @@
 }
 
 
-.footerC a {
+.information a {
     color: var(--color-white);
     font-style: italic;
     font-weight: 100;
     font-size: 0.8rem;
 }
 
-.footerC a:hover {
+.information a:hover {
     color: var(--color-lightGreen);
 }
 
@@ -132,15 +168,19 @@
 
 /* --- ipad pro --- */
 @media (max-width: 1100px) {
+    .animation {
+        display: none;
+    }
 
     .footerC {
         grid-area: footerC;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr 1fr 1fr; */
         grid-template-rows: auto;
         grid-template-areas: 
-            "animation animation animation"
-            "resource interest contact"
+            "information"
+            "animation"
     }
 
     .footerC h3 {
@@ -160,13 +200,13 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-template-areas: 
-            "animation"
             "resource" 
             "interest"
             "contact"
+            "animation"
     }
 
-    .footerC h3 {
+    .information h3 {
         font-size: 0.8rem;
     }
 
