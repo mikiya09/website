@@ -1,39 +1,37 @@
 
 ---
-// import Glowing Loader CSS Object
+// import GLowing Loader CSS object 
 import GlowingLoader from './cssItems/GlowingLoader.astro'
 ---
 
-<footer class="footer">
+<footer>
     <div class="footerL">
     </div>
     <div class="footerC">
-        <div class="animation">
-            <div class="loader-box">
-                <GlowingLoader />
-                <div class="loader-text">
-                    <p>back to the top</p>
-                </div>
-            </div>
+        <div class="footer-info">
+            <span>
+                <h3>Resource</h3> 
+                <p><a href="/">Computer Science</a></p>
+                <p><a href="/">Psychology</a></p>
+                <p><a href="/">Mathematics</a></p>
+            </span>
+            <span>
+                <h3>Interests</h3> 
+                <p><a href="/">Visual</a></p>
+                <p><a href="/">Auditory</a></p>
+                <p><a href="/">Idea</a></p>
+            </span>
+            <span>
+                <h3>Contact</h3> 
+                <p><a href="/">+1</a></p>
+                <p><a href="/">New Yorik, NY</a></p>
+                <p><a href="/">spacelion121319@gmail.com</a></p>
+            </span>
         </div>
-        <div class="information">
-            <div class="resource">
-                <h3>Resource</h3>
-                <div><a href="/">Computer Science</a></div>
-                <div><a href="/">Psychology</a></div>
-                <div><a href="/">Mathematics</a></div>
-            </div>
-            <div class="interest">
-                <h3>Interests</h3>
-                <div><a href="/">Visual</a></div>
-                <div><a href="/">Auditory</a></div>
-                <div><a href="/">Idea</a></div>
-            </div>
-            <div class="contact">
-                <h3>Contact</h3>
-                <div><a href="/">+1</a></div>
-                <div><a href="/">New York, NY</a></div>
-                <div><a href="/">spacelion121319@gmail.com</a>
+        <div class="footer-random">
+            <div>
+                <GlowingLoader />
+                <p><a href="/">back to the top</a></p>
             </div>
         </div>
     </div>
@@ -42,110 +40,29 @@ import GlowingLoader from './cssItems/GlowingLoader.astro'
 </footer>
 
 
-
+<!-- --- style --- -->
 <style>
-/* --- nested grid display --- */
-
-.resource {
-    grid-area: resource;
-}
-
-.interest {
-    grid-area: interest;
-}
-
-.contact {
-    grid-area: contact;
-}
-
-.animation {
-    grid-area: animation;
-}
 
 
-.animation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loader-text p {
-    position: relative;
-    left: 30%;
-    text-align: right;
-    margin: 0.7rem 0 0;
-    /* color: var(--color-black); */
-    color: '#000';
-}
-
-
-.information {
-    grid-area: information;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "resource interest contact"
-}
-
-
-.footerC {
-    grid-area: footerC;
-    display: grid;
-    grid-template-columns: 60% 40%;
-    /* grid-template-columns: 20% 20% 20% 40%; */
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "information animation"
-}
-
-.information h3 {
-    /* text-align: center; */
-    padding: 2rem 0 1.5rem;
-    color: var(--color-white);
-    font-style: italic;
-    font-size: 1rem;
-}
-
-.resource div {
-    padding: 0.6rem 0;
-}
-
-.interest div {
-    padding: 0.6rem 0;
-}
-
-.contact div {
-    padding: 0.6rem 0;
-}
-
-
-.information a {
-    color: var(--color-white);
-    font-style: italic;
-    font-weight: 100;
-    font-size: 0.8rem;
-}
-
-.information a:hover {
-    color: var(--color-lightGreen);
-}
-
+/* ---------- grid display for whole footer section ---------- */
 
 .footerL {
     grid-area: footerL;
 }
 
+.footerC {
+    grid-area: footerC;
+    display: flex;
+}
 
 .footerR {
     grid-area: footerR;
 }
 
-
-.footer {
-    margin: 1.5rem 0 3rem;
-    /* border: solid; */
-    background: var(--color-bg);
+footer {
+    padding: 2.5rem 0 2.5rem;               /* give some space between top and bottom of the footer section */
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
     display: grid;
     grid-template-columns: 15% 70% 15%;
     grid-template-rows: auto;
@@ -153,77 +70,106 @@ import GlowingLoader from './cssItems/GlowingLoader.astro'
         "footerL footerC footerR"
 }
 
-/* --- large monitor such as 24 inches --- */
-.footer {
-    grid-template-columns: 15% 70% 15%;
+
+/* --------- footer info(information) section --------- */
+.footer-info {
+    display: flex;
+}
+
+/* setup on the second span has left and right margin, so that three info div can be separated  */
+.footer-info span:nth-child(2) {
+    margin: 0 5.5rem 0;
+}
+
+.footer-info h3 {
+    color: var(--color-white);
+    padding: 1rem 0 1rem;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.footer-info p {
+    padding: 0.7rem 0 0.7rem;
+    font-size: 0.8rem;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.footer-info a:hover {
+    color: var(--color-green);
+}
+.footer-info a {
+    color: var(--color-white);
 }
 
 
-/* large monitor > 24 inches */
+/* ---------- footer random section, putting anything ---------- */
+/* right now I am using glowing loader as placeholder  */
+.footer-random {
+    display: flex;
+    margin: auto;
+}
+
+.footer-random div {
+    margin: 1rem 0 0;
+}
+
+
+.footer-random a {
+    position: relative;
+    left: 78%;
+    top: 0.7rem;
+    color: var(--color-dark);
+}
+
+
+/* --- large monitor such as 24 inches --- */
 @media (max-width: 1700px) {
-    .footer {
+    footer {
         grid-template-columns: 12% 76% 12%;
     }
 }
 
-/* --- ipad pro --- */
 @media (max-width: 1100px) {
-    .animation {
-        display: none;
+
+    .footer-info p {
+        font-size: 0.7rem;
     }
 
     .footerC {
-        grid-area: footerC;
-        display: grid;
-        grid-template-columns: 1fr;
-        /* grid-template-columns: 1fr 1fr 1fr; */
-        grid-template-rows: auto;
-        grid-template-areas: 
-            "information"
-            "animation"
+        flex-direction: column;
     }
 
-    .footerC h3 {
+    .footer-info {
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* adding little space at the top of the glowing loader */
+    .footer-random div {
+        padding: 3rem 0 1rem;
+    }
+}
+
+
+@media (max-width: 888px) {
+
+
+    .footer-info {
+        display: flex;
+        flex-direction: column;
         text-align: center;
     }
 
-    .footerC div {
-        text-align: center
+    .footer-random div {
+        padding: 2rem 0 1rem;
     }
 
-/* --- iphone --- */
-@media (max-width: 690px) {
-
-    .footerC {
-        grid-area: footerC;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-template-areas: 
-            "resource" 
-            "interest"
-            "contact"
-            "animation"
-    }
-
-    .information h3 {
+    .footer-random a {
         font-size: 0.8rem;
     }
-
-    .resource {
-        padding: 0.6rem 0 0;
-        border-bottom: solid var(--color-grey);
-    }
-
-    .interest {
-        padding: 0.6rem 0 0;
-        border-bottom: solid var(--color-grey);
-    }
-
-    .contact {
-        padding: 0.6rem 0 0;
-        border-bottom: solid var(--color-grey);
-    }
 }
+
+
 
 </style>
