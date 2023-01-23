@@ -18,14 +18,15 @@ const {
     body = 'short introduction' } = Astro.props as Props;
 
 // profile pic
-import profileImg from '../assets/images/smile.jpg';
+import profileImg from '';
+import profilePlaceholder from '../assets/images/smile.jpg'
 import cv from '../assets/file/moanin.pdf';
 ---
 
 
 <div class="profile-grid">
     <div class="profile">
-        <img src={profileImg} alt="">
+        <img src={profilePlaceholder} alt="">
     </div>
     <div class="introduction">
         <div class="intro-text">
