@@ -48,7 +48,8 @@
 
 /* text-selected color */
 ::selection {
-    background: var(--color-grey);
+    /* background: var(--color-grey); */
+    background: var(--color-white);
     color: var(--color-black);
 }
 
