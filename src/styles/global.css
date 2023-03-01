@@ -60,7 +60,7 @@
 
 body {
     font-family: 'Montserrat Alternates';
-    padding: 4rem 14rem 4rem;
+    padding: 5rem 15rem 5rem;
     background: var(--color-bg);
     /* 
     for the slide menu in the mobile device: 
@@ -117,10 +117,10 @@ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
 .grid-box {
     background: var(--color-bg);
-    border: solid;
+    border: solid 1px;
     border-radius: 2rem;
     /* padding: 1rem; */
-    box-shadow: 15px 15px 15px var(--color-black);
+    box-shadow: 0px 0px 40px var(--color-black);
     display: grid;
     grid-template-columns: 15% 70% 15%;
     grid-template-rows: auto;
@@ -162,21 +162,35 @@ four value:  top | right | down | left
 
 
 /* --- monitor larger then 24 inches --- */
-@media (max-width: 1700px) {
+@media (max-width: 1900px) {
     body {
-        padding: 3rem 9rem 3rem;
-    }
-
-    .grid-box {
-        grid-template-columns: 12% 76% 12%;
+        padding: 5rem 16rem 5rem;
     }
 
 }
 
-/* --- ipad pro --- */
-@media (max-width: 1100px) {
+/* intermediate between ipad and desktop */
+@media (max-width: 1700px) {
     body {
-        padding: 2.5rem 7rem 2.5rem;
+        padding: 5rem 15rem 5rem;
+    }
+
+    .grid-box {
+        grid-template-columns: 15% 70% 15%;
+    }
+
+}
+
+@media (max-width: 1500px) {
+    body {
+        padding: 5rem 14rem 5rem;
+    }
+}
+
+/* --- ipad pro --- */
+@media (max-width: 1300px) {
+    body {
+        padding: 5rem 9rem 5rem;
     }
 }
 

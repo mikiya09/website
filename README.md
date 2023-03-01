@@ -5,6 +5,7 @@
 
 ## Revise Ideas 
 *1) make shadow in all directions, not just on the right, but also on the left, full angle, like [Stripe](https://stripe.com/)* <br>
+*2) adjust the body padding, do I really need the top to fix with the position accordingly to the left side bar?*
 *2) change a lighter dark color for background, because almost PhD or researchers or professor have white and simple website, don't go to far from that convention, while keeping your uniqueness* <br>
 *3) change left slide icon, don't put all social media there, doesn't look professional*
 
